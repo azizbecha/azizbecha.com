@@ -1,8 +1,11 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-black items-start justify-start px-48">
-      <h1 className="text-main font-ubuntu font-bold text-4xl">Aziz Becha</h1>
-    </main>
+    <main className="flex flex-col min-h-screen w-full bg-black text-white items-start justify-start px-4 sm:px-48">
+      <Hero />
 
+      <hr className="bg-white w-full mt-10" />
+    </main>
   );
 }
