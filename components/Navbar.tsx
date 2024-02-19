@@ -21,7 +21,7 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <div className={`flex flex-wrap items-start justify-start gap-2 px-5 sm:px-20 md:px-48 py-10 bg-black ${isNavbarOpen ? 'flex-col w-full' : 'flex-row'}`}>
+        <div className={`flex flex-wrap items-start justify-start gap-2 px-5 sm:px-20 md:px-64 py-10 bg-black ${isNavbarOpen ? 'flex-col w-full' : 'flex-row'}`}>
             {/* Toggle Button for Mobile and Tablet */}
             <button
                 className="block sm:hidden text-white"

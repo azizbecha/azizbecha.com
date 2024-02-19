@@ -1,7 +1,7 @@
 "use client"
 import { TypeAnimation } from 'react-type-animation';
 
-export default function Hero() {
+export const Hero = () => {
     return (
         <div className="mt-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 w-full">
