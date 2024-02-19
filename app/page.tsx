@@ -5,7 +5,9 @@ export default function Home() {
     <main className="flex flex-col min-h-screen w-full bg-black text-white items-start justify-start px-4 sm:px-48">
       <Hero />
 
-      <hr className="bg-white w-full mt-10" />
+      <hr className="bg-white w-full my-5" />
+
+      <h2>Latest posts</h2>
     </main>
   );
 }
