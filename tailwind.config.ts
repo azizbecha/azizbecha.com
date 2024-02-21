@@ -11,7 +11,10 @@ const config: Config = {
       main: "#BB2649",
       black: "#181818",
       white: "#fff",
-      grey: "#999"
+      grey: {
+        DEFAULT: "#5A5A5A",
+        light: "#999"
+      }
     },
     extend: {
       fontFamily: {
