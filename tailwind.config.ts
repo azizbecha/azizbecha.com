@@ -11,7 +11,7 @@ const config: Config = {
       main: "#BB2649",
       black: "#181818",
       white: "#fff",
-      grey: "#5A5A5A"
+      grey: "#999"
     },
     extend: {
       fontFamily: {
@@ -30,8 +30,7 @@ const config: Config = {
         'bold-italic': 'italic',
       },
     },
-  },
-  plugins: [],
+  }
 };
 
 export default config;
