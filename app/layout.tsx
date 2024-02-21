@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+
 import { Navbar } from "@/components/Navbar";
+import AnimatedCursor from "react-animated-cursor"
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,20 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-
+        <AnimatedCursor
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
+          outerScale={2}
+          outerAlpha={0}
+          trailingSpeed={3}
+          innerStyle={{
+            backgroundColor: "#BB2649"
+          }}
+          outerStyle={{
+            border: '3px solid #fff'
+          }}
+        />
         {children}
       </body>
     </html>
