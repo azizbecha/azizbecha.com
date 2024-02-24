@@ -23,6 +23,7 @@ export const Hero = () => {
                     <img src="https://png.pngtree.com/png-vector/20221208/ourmid/pngtree-cartoon-illustration-red-rocket-png-image_6515439.png" className="w-full m-auto" />
                 </div>
             </div>
+            <p className='text-center mt-5 italic'>*sorry for the weird ui, i'm busy fixing database bugs*</p>
         </div>
     );
 }
