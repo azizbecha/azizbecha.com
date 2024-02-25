@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const colors = require('tailwindcss/colors');
 
 const config: Config = {
   content: [
@@ -10,11 +11,22 @@ const config: Config = {
     colors: {
       main: "#BB2649",
       black: "#181818",
-      white: "#fff",
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: colors.white,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      stone: colors.warmGray,
+      sky: colors.lightBlue,
+      neutral: colors.trueGray,
+      gray: colors.coolGray,
+      slate: colors.blueGray,
       grey: {
         DEFAULT: "#5A5A5A",
-        light: "#999"
-      }
+        light: "#999",
+        lighter: "#ddd"
+      },
     },
     extend: {
       fontFamily: {
@@ -33,7 +45,12 @@ const config: Config = {
         'bold-italic': 'italic',
       },
     },
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require("daisyui"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ]
 };
 
 export default config;
