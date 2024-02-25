@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { PostTitle } from "@/components/PostTitle";
 
 export default async function Post({ params }: Params) {
+
   const post = getPostBySlug(params.slug);
 
   if (!post) {
