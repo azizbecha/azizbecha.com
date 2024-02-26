@@ -21,7 +21,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <Posts />
+        <Posts limit={2} />
       </Container>
 
     </main>

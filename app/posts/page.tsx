@@ -1,15 +1,8 @@
-"use client"
-
-import { getAllPosts } from "@/lib/api"
+import { PostPreview } from "@/components/PostPreview";
+import { getAllPosts } from "@/lib/api";
 import { Post } from "@/types";
-import { PostPreview } from "./PostPreview";
 
-interface Props {
-    limit?: number
-}
-
-export const Posts = (props: Props) => {
-
+export default function Posts() {
     const allPosts: Post[] = getAllPosts();
 
     return (
