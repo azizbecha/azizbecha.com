@@ -1,29 +1,56 @@
 "use client"
 import { TypeAnimation } from 'react-type-animation';
 
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
+
+SyntaxHighlighter.registerLanguage("typescript", typescript);
+
 export const Hero = () => {
+    const content = `// Welcome to Aziz Becha's TypeScript Playground 🚀
+interface Developer {
+  name: string;
+  role: string;
+  passions: string[];
+  code: string[];
+}
+
+const me: Developer = {
+  name: 'Aziz Becha',
+  role: 'Software Developer 👩‍💻',
+  passions: ['coding 💻', 'reading 📚', 'learning 💡'],
+  code: ['TypeScript', 'React', 'React Native', 'Arduino'],
+};
+
+// About Me
+console.log(\`Hello, curious mind! I'm \${me.name}, a \${me.role}.\`);
+
+// Thank you for visiting!
+console.log('Thanks for exploring my TypeScript playground! 🚀');`;
+
     return (
         <div className="mt-5">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 w-full">
-                <div className="col-span-3 sm:col-span-2">
-                    <h1 className="hero-title text-main font-ubuntu font-bold text-5xl mb-8">
-                        <TypeAnimation
-                            sequence={["Hey, I'm Aziz Becha", 1000]}
-                            speed={50}
-                            repeat={Infinity}
-                        />
-                    </h1>
-                    <p className="text-xl text-white font-mono font-normal text-justify">
-                        I'm a software developer and programmer who makes open-source projects
-                        and writes about life, code, books, and more. <br />
-                        Welcome to my digital space where I share my ideas, tips, thoughts and resources with you. ✨
-                    </p>
-                </div>
-                <div className="w-full hidden sm:block">
-                    <img src="https://png.pngtree.com/png-vector/20221208/ourmid/pngtree-cartoon-illustration-red-rocket-png-image_6515439.png" className="w-full m-auto" />
-                </div>
-            </div>
-            <p className='text-center mt-5 italic'>*sorry for the weird ui, i'm busy fixing database bugs*</p>
+            <h1 className="hero-title text-main font-ubuntu font-bold text-5xl mb-5">
+                <TypeAnimation
+                    sequence={["Hey! I'm Aziz Becha 🚀", 1000]}
+                    speed={50}
+                    repeat={Infinity}
+                    cursor
+                    className='hero-title font-ubuntu text-main font-bold text-5xl mb-8'
+                />
+            </h1>
+            <SyntaxHighlighter
+                language="typescript"
+                style={oneDark}
+                className="mockup-phone w-full text-md border-4 rounded-xl border-transparent animated-border"
+                showLineNumbers
+                useInlineStyles
+                showInlineLineNumbers
+            >
+                {content.trim()}
+            </SyntaxHighlighter>
+            <p className='text-center mt-4 italic'>*sorry for the weird ui, i'm busy fixing database bugs*</p>
         </div>
     );
 }

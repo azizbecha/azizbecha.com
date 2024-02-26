@@ -4,6 +4,38 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+@keyframes borderAnimation {
+    0% {
+        border-color: #BB2649;
+        margin-left: 0;
+    }
+
+    25% {
+        border-color: #00ccff;
+        margin-left: 25;
+    }
+
+    50% {
+        border-color: #0000ff;
+        margin-left: 50;
+    }
+
+    75% {
+        border-color: #ff00ff;
+        margin-left: 75;
+    }
+
+    100% {
+        border-color: #eb3131;
+        margin-left: 100;
+    }
+}
+
+.animated-border {
+    border-color: #BB2649;
+    animation: borderAnimation 3s infinite;
+}
+
 .post-preview:hover h3 {
     color: white;
     text-decoration: underline;
@@ -17,6 +49,7 @@
 .md-article {
     color: #fff;
 }
+
 .md-article h1 {
     color: #fff;
     @apply font-semibold text-3xl;
@@ -56,7 +89,7 @@
     @apply mb-2;
 }
 
-:not(pre div) > code {
+:not(pre div)>code {
     @apply bg-main text-white px-2 py-0.5 mx-0.5 rounded-md;
 }
 
