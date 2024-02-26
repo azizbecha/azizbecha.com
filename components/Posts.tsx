@@ -1,21 +1,56 @@
 "use client"
 
-import { getAllPosts } from "@/lib/api"
+import { FC, useEffect, useState } from "react";
 import { Post } from "@/types";
 import { PostPreview } from "./PostPreview";
 
 interface Props {
-    limit?: number
+    limit?: number;
 }
 
-export const Posts = (props: Props) => {
+const Posts: FC<Props> = ({ limit = 0 }) => {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    const allPosts: Post[] = getAllPosts();
+    const fetchPosts = async () => {
+        try {
+            const response = await fetch("api/posts");
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch posts. Status: ${response.status}`);
+            }
+
+            const fetchedPosts: Post[] = await response.json();
+            setPosts(fetchedPosts);
+        } catch (error: any) {
+            console.error("Error fetching posts:", error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchPosts();
+    }, []);
+
+    if (loading) {
+        return <p>Loading</p>
+    }
 
     return (
-        allPosts.map((post, key) => {
-            return <PostPreview key={key} image={post.image} date={post.date} category={post.tags} postId={post.slug} title={post.title} />
+        <>
+            {posts.slice(0, limit).map((post, key) => (
+                <PostPreview
+                    key={key}
+                    image={post.image}
+                    date={post.date}
+                    category={post.tags}
+                    postId={post.slug}
+                    title={post.title}
+                />
+            ))}
+        </>
+    );
+};
 
-        })
-    )
-}
+export default Posts;

@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Divider } from "@/components/Divider";
 import { Container } from "@/components/container";
 import { Button } from "@/components/Button";
-import { Posts } from "@/components/Posts";
+import Posts from "@/components/Posts";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <Posts limit={2} />
+        <Posts limit={5} />
       </Container>
 
     </main>
