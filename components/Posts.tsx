@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from "react";
 import { Post } from "@/types";
 import { PostPreview } from "./PostPreview";
+import PostSkeletonLoader from "./PostSkeletonLoader";
 
 interface Props {
     limit?: number;
@@ -34,7 +35,7 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
     }, []);
 
     if (loading) {
-        return <p>Loading</p>
+        return <PostSkeletonLoader />
     }
 
     return (
