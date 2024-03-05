@@ -10,7 +10,7 @@ interface Props {
 const SharePost = ({ url }: Props) => {
     return (
         <div className="pt-2 border-t-2 border-t-white">
-            <h4 className="font-ubuntu font-light">You enjoyed reading this article ? Share it with your friends.</h4>
+            <p className="font-ubuntu font-light">You enjoyed reading this article ? Share it with your friends.</p>
             <p className="mb-2 font-ubuntu font-light">Sharing is caring ✨</p>
             
             <div className="flex gap-3">

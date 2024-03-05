@@ -1,5 +1,8 @@
 import { Metadata } from "next";
-import { notFound, usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
+
+import { remark } from "remark";
+import html from 'remark-html';
 
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 
@@ -11,7 +14,6 @@ import SharePost from "@/components/SharePost";
 export default async function Post({ params }: Params) {
 
   const post = getPostBySlug(params.slug);
-  // const pathname = usePathname();
   const url = "";
 
   if (!post) {
@@ -40,18 +42,32 @@ type Params = {
   };
 };
 
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
     return notFound();
   }
 
-  const title = `${post.title}`;
+  const title = post.title;
+  // Use remark to convert Markdown to HTML and then strip HTML tags
+  const description = (
+    await remark().use(html).process(post.content.substring(0, 251))
+  ).toString().replace(/(<([^>]+)>)/gi, '');
 
   return {
+    title: `${title} | Aziz Becha`,
+    description: description,
+    robots: "index, follow",
+    creator: "Aziz Becha",
     openGraph: {
+      type: "article",
       title,
+      description,
+      siteName: "Aziz Becha",
+      images: [{
+        url: post.image,
+      }],
     },
   };
 }
