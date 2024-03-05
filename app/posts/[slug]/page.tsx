@@ -1,13 +1,18 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
+
 import { getAllPosts, getPostBySlug } from "@/lib/api";
+
 import { PostBody } from "@/components/PostBody";
 import { Container } from "@/components/container";
 import { PostTitle } from "@/components/PostTitle";
+import SharePost from "@/components/SharePost";
 
 export default async function Post({ params }: Params) {
 
   const post = getPostBySlug(params.slug);
+  // const pathname = usePathname();
+  const url = "";
 
   if (!post) {
     return notFound();
@@ -21,6 +26,9 @@ export default async function Post({ params }: Params) {
           <PostTitle title={post.title} date={post.date} />
           <PostBody content={post.content} />
         </article>
+
+        <SharePost url={url} />
+
       </Container>
     </main>
   );

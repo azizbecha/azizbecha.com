@@ -11,7 +11,6 @@ export default function Home() {
     <main>
       <Container>
         <Hero />
-
         <Divider />
 
         <div className="flex justify-between items-center mt-4 mb-3">

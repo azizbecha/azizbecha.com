@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
-import { Navbar } from "@/components/Navbar";
+import { Toaster } from "react-hot-toast";
+
 import AnimatedCursor from "react-animated-cursor"
+
+import { Navbar } from "@/components/Navbar";
 
 import "./globals.css";
 
@@ -19,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+        <Toaster />
         <AnimatedCursor
           innerSize={8}
           outerSize={35}
