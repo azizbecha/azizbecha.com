@@ -60,7 +60,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: description,
     robots: "index, follow",
     creator: "Aziz Becha",
-    authors: post.contributors.split(/[,]+/).map((author) => ({name: author.trim()})),
+    publisher: "Aziz Becha",
+    authors: post.contributors.split(/[,]+/).map((author) => ({ name: author.trim() })),
     openGraph: {
       type: "article",
       title,
