@@ -12,7 +12,6 @@ interface Props {
 
 export const PostPreview: React.FC<Props> = (props) => {
     const tags = props.category.split(",");
-    console.log(tags)
 
     return (
         <Link href={`posts/${props.postId}`}>

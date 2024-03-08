@@ -5,4 +5,5 @@ export type Post = {
   image: string;
   content: string;
   tags: string
+  contributors: string
 };
