@@ -60,11 +60,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: description,
     robots: "index, follow",
     creator: "Aziz Becha",
+    authors: post.contributors.split(/[,]+/).map((author) => ({name: author.trim()})),
     openGraph: {
       type: "article",
       title,
       description,
       siteName: "Aziz Becha",
+      publishedTime: post.date,
+      authors: post.contributors.split(/[,]+/),
       images: [{
         url: post.image,
       }],
