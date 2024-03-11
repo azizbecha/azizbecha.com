@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     colors: {
       main: "#BB2649",
-      black: "#181818",
       transparent: 'transparent',
+      black: "#000",
       current: 'currentColor',
       white: colors.white,
       emerald: colors.emerald,
@@ -23,9 +23,11 @@ const config: Config = {
       gray: colors.gray,
       slate: colors.slate,
       grey: {
-        DEFAULT: "#5A5A5A",
-        light: "#999",
-        lighter: "#ddd"
+        DEFAULT: "#161b22",
+        
+        200: "#999",
+        300: "#ddd",
+        400: "#23262E"
       },
     },
     extend: {

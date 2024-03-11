@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 import AnimatedCursor from "react-animated-cursor"
 
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 
 import "./globals.css";
 

@@ -76,7 +76,7 @@
 }
 
 .md-article p {
-    @apply text-lg text-justify leading-7 text-grey-lighter;
+    @apply text-lg text-justify leading-7 text-grey-300;
     @apply mb-5
 }
 
@@ -94,5 +94,5 @@
 }
 
 .md-article kbd {
-    @apply bg-grey px-2 py-0.5 mx-0.5 rounded border border-grey-light;
+    @apply bg-grey px-2 py-0.5 mx-0.5 rounded border border-grey-200;
 }
