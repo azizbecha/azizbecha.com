@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { Button } from "@/components/Button";
 import Posts from "@/components/Posts";
+import { Heading } from "@/components/Heading";
 
 export default function Home() {
   return (
     <main>
       <Container>
         <div className="flex justify-between items-center mb-3">
-          <h2 className="font-ubuntu font-bold text-3xl">Latest Posts</h2>
+          <Heading variant="h1">Latest Posts</Heading>
           <Link href={'posts'}>
             <Button text="View all" />
           </Link>
