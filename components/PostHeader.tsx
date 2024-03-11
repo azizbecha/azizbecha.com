@@ -1,5 +1,6 @@
 import moment from "moment";
 import ContributorsList from "./ContributorsList";
+import { Heading } from "./Heading";
 
 interface Props {
     title: string,
@@ -12,7 +13,7 @@ export const PostHeader = (props: Props) => {
 
     return (
         <div className="mb-10">
-            <h1 className="text-white font-ubuntu text-5xl font-bold mb-5">{props.title}</h1>
+            <Heading variant="h1" className="mb-5">{props.title}</Heading>
             <time dateTime={props.date} className="font-mono italic text-emerald-500 font-semibold">
                 - {formattedDate}
             </time>

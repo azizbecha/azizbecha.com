@@ -30,7 +30,7 @@ export default function NavBar() {
   let pathname = usePathname() || "/";
 
   return (
-    <div className="w-full py-6 px-32 z-[100] bg-grey text-white font-ubuntu backdrop-blur-md">
+    <div className="w-full py-6 px-4 sm:px-32 z-[100] bg-grey text-white font-ubuntu backdrop-blur-md">
       <nav className="flex justify-center w-full z-[100]">
         <Link href="/" className="hidden md:flex justify-between items-center w-1/4">
           <img className="w-10 h-10 rounded-full shadow" src="azizbecha.jpg" alt="" />

@@ -1,6 +1,7 @@
 import moment from "moment";
 import Link from "next/link";
 import { FaTag } from "react-icons/fa";
+import { Heading } from "./Heading";
 
 interface Props {
     postId: string;
@@ -20,9 +21,9 @@ export const PostPreview: React.FC<Props> = (props) => {
                     <img src={props.image} alt={`Image of ${props.title}`} className="mr-2 w-14 rounded-md" />
 
                     <div className="flex flex-col">
-                        <h3 className="font-ubuntu font-medium text-lg text-grey-lighter hover:text-white hover:underline">
+                        <Heading variant="h5" className="font-ubuntu font-medium text-lg text-grey-lighter hover:text-white hover:underline">
                             {props.title}
-                        </h3>
+                        </Heading>
                         <div className="flex items-center gap-2">
                             {tags.map((tag, index) => (
                                 <span
@@ -35,9 +36,9 @@ export const PostPreview: React.FC<Props> = (props) => {
                         </div>
                     </div>
                 </div>
-                <h5 className="text-main text-right m-2 font-mono font-semibold hover:font-bold hover:underline">
+                <p className="text-main text-right m-2 font-mono font-semibold hover:font-bold hover:underline">
                     {moment(props.date, "YYYY-MM-DD").format("MMMM YYYY")}
-                </h5>
+                </p>
             </div>
         </Link>
     );

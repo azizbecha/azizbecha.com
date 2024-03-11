@@ -29,14 +29,14 @@ const tags: Record<Variant, ElementType> = {
 };
 
 const sizes: Record<Variant, string> = {
-    h1: "text-5xl font-bold font-ubuntu sm:text-4xl",
-    h2: "text-4xl font-bold font-ubuntu sm:text-3xl",
-    h3: "text-3xl font-bold font-ubuntu sm:text-2xl",
-    h4: "text-2xl font-bold font-ubuntu sm:text-1xl",
-    h5: "text-xl font-bold font-ubuntu sm:text-lg",
-    body: "text-lg sm:text-md",
-    "body-small": "text-md sm:text-sm",
-    small: "text-sm sm:text-xs"
+    h1: "text-3xl font-bold font-ubuntu sm:text-5xl",
+    h2: "text-2xl font-bold font-ubuntu sm:text-4xl",
+    h3: "text-xl font-bold font-ubuntu sm:text-3xl",
+    h4: "text-lg font-bold font-ubuntu sm:text-2xl",
+    h5: "text-md font-bold font-ubuntu sm:text-lg",
+    body: "text-md sm:text-lg",
+    "body-small": "font-ubuntu text-sm sm:text-sm",
+    small: "font-ubuntu text-sm sm:text-xs"
 };
 
 export const Heading = ({ variant, children, className, as }: Props) => {

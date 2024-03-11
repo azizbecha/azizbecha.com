@@ -1,4 +1,5 @@
 import React from 'react';
+import { Heading } from './Heading';
 
 interface Props {
   authors: string[];
@@ -39,8 +40,8 @@ const ContributorsList: React.FC<Props> = ({ authors }) => {
 
   return (
     <div className="text-sky-400">
-      <p className="font-ubuntu font-semibold">
-        Written by {" "}
+      <Heading variant='body-small' className="font-ubuntu font-semibold">
+        - Written by {" "}
         {numberOfAuthors === 1 ? (
           <span className="font-ubuntu font-semibold">{authors[0]}</span>
         ) : (
@@ -50,7 +51,7 @@ const ContributorsList: React.FC<Props> = ({ authors }) => {
             </span>
           ))
         )}
-      </p>
+      </Heading>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import html from 'remark-html';
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 
 import { PostBody } from "@/components/PostBody";
-import { Container } from "@/components/container";
+import { Container } from "@/components/Container";
 import { PostHeader } from "@/components/PostHeader";
 import SharePost from "@/components/SharePost";
 
