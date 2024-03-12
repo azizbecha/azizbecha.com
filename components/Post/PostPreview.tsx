@@ -1,7 +1,7 @@
 import moment from "moment";
 import Link from "next/link";
 import { FaTag } from "react-icons/fa";
-import { Heading } from "./Heading";
+import { Heading } from "../Heading";
 
 interface Props {
     postId: string;

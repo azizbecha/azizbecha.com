@@ -1,4 +1,4 @@
-import { PostPreview } from "@/components/PostPreview";
+import { PostPreview } from "@/components/Post/PostPreview";
 import { getAllPosts } from "@/lib/api";
 import { Post } from "@/types";
 

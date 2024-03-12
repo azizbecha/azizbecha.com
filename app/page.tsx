@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
-import Posts from "@/components/Posts";
+import Posts from "@/components/Post/Posts";
 import { Heading } from "@/components/Heading";
 
 export default function Home() {

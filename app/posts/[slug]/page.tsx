@@ -6,10 +6,12 @@ import html from 'remark-html';
 
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 
-import { PostBody } from "@/components/PostBody";
+import { PostBody } from "@/components/Post/PostBody";
 import { Container } from "@/components/Container";
-import { PostHeader } from "@/components/PostHeader";
-import SharePost from "@/components/SharePost";
+import { PostHeader } from "@/components/Post/PostHeader";
+import SharePost from "@/components/Post/SharePost";
+import PostImage from "@/components/Post/PostImage";
+import TableOfContents from "@/components/Post/TableOfContents";
 
 export default async function Post({ params }: Params) {
 
@@ -24,9 +26,16 @@ export default async function Post({ params }: Params) {
     <main>
       <Container>
         <article>
-          <img src={post.image} className="mb-8" />
           <PostHeader title={post.title} date={post.date} contributors={post.contributors} />
-          <PostBody content={post.content} />
+          <div className="flex gap-3">
+            <div className="sm:w-3/4 w-full">
+              <PostImage image={post.image} />
+              <PostBody content={post.content} />
+            </div>
+            <div className="sm:w-1/4 sm:block w-full hidden">
+              <TableOfContents content={post.content} />
+            </div>
+          </div>
         </article>
 
         <SharePost url={url} />

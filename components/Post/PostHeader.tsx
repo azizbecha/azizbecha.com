@@ -1,6 +1,6 @@
 import moment from "moment";
 import ContributorsList from "./ContributorsList";
-import { Heading } from "./Heading";
+import { Heading } from "../Heading";
 
 interface Props {
     title: string,
