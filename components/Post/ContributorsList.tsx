@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heading } from '../Heading';
+import { FaPenToSquare } from 'react-icons/fa6';
 
 interface Props {
   authors: string[];
@@ -40,17 +41,21 @@ const ContributorsList: React.FC<Props> = ({ authors }) => {
 
   return (
     <div className="text-sky-400">
-      <Heading variant='body-small' className="font-ubuntu font-semibold">
-        - Written by {" "}
-        {numberOfAuthors === 1 ? (
-          <span className="font-ubuntu font-semibold">{authors[0]}</span>
-        ) : (
-          authors.map((author, key) => (
-            <span className="font-ubuntu font-semibold" key={key}>
-              <Author authorName={author} index={key} count={numberOfAuthors} />
-            </span>
-          ))
-        )}
+      <Heading variant='body-small' className="font-ubuntu font-semibold items-center flex">
+        <span className='flex mr-1 items-center'>
+          <FaPenToSquare className='mr-1' /> Written by {" "}
+        </span>
+        <span>
+          {numberOfAuthors === 1 ? (
+            <span className="font-ubuntu font-semibold">{authors[0]}</span>
+          ) : (
+            authors.map((author, key) => (
+              <span className="font-ubuntu font-semibold" key={key}>
+                <Author authorName={author} index={key} count={numberOfAuthors} />
+              </span>
+            ))
+          )}
+        </span>
       </Heading>
     </div>
   );
