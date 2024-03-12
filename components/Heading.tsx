@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import React, { ElementType } from "react";
+import toast from "react-hot-toast";
 import { FaLink } from "react-icons/fa6";
 
 type Variant =
@@ -53,7 +54,7 @@ export const Heading = ({ variant, children, className, as, id, link }: Props) =
     const path = usePathname();
 
     return (
-        <div className="relative group flex items-center">
+        <div className="relative group flex items-center py-1">
             <Tag
                 className={`${sizeClasses} ${className} ${link && 'hover:underline'} pr-4`}
                 id={id}
@@ -66,6 +67,7 @@ export const Heading = ({ variant, children, className, as, id, link }: Props) =
                     data-tip="Copy link"
                     onClick={() => {
                         navigator.clipboard.writeText(path+linkId);
+                        toast.success("Link copied to clipboard");
                     }}
                 >
                     <FaLink className="h-6 w-6 cursor-pointer text-main hover:text-blue-600" />
