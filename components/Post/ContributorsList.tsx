@@ -25,12 +25,12 @@ const prefix = (count: number, index: number) => {
 const Author: React.FC<AuthorProps> = ({ index, authorName, count }) => {
   if (count == 1) {
     // If there is only 1 author
-    return <>{authorName}</>
+    return <span className='hover:underline'>{authorName.trim()}</span>
   } else {
     // If there are multiple authors
     return (
       <>
-        {authorName.trim()}{prefix(count, index)}
+        <span className='hover:underline'>{authorName.trim()}</span>{prefix(count, index)}
       </>
     )
   }

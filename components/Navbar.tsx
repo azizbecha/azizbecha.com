@@ -41,7 +41,7 @@ export default function NavBar() {
             return (
               <Link
                 key={item.path}
-                className={`px-3 sm:px-6 py-1 text-center rounded-md lg:text-base relative no-underline duration-300 ease-in`}
+                className={`px-3 sm:px-6 py-1 text-center items-center rounded-md lg:text-base relative no-underline duration-300 ease-in`}
                 data-active={isActive}
                 href={item.path}
               >
