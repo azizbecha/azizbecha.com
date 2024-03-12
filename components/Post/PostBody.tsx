@@ -21,6 +21,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Heading, Variant } from "../Heading";
 
 SyntaxHighlighter.registerLanguage("tsx", tsx);
 SyntaxHighlighter.registerLanguage("typescript", typescript);
@@ -37,6 +38,18 @@ interface CustomAnchorProps {
   href: string;
   children: React.ReactNode;
 }
+
+interface CustomHeadingProps {
+  level: number;
+  children: React.ReactNode;
+}
+
+const CustomHeading: React.FC<CustomHeadingProps> = ({ level, children }) => {
+  const id = children?.toString().toLowerCase().replace(/\s+/g, '-');
+  const variant = `h${String(level)}` as Variant;
+
+  return <Heading variant={variant} id={id}>{children}</Heading>
+};
 
 const CustomAnchor: React.FC<CustomAnchorProps> = ({ href, children }) => {
   return (
@@ -117,7 +130,13 @@ export const PostBody = ({ content }: MarkdownRenderProps) => {
           );
         },
         // @ts-ignore
-        a: CustomAnchor
+        a: CustomAnchor,
+        h1: ({ children }) => <CustomHeading level={1}>{children}</CustomHeading>,
+        h2: ({ children }) => <CustomHeading level={2}>{children}</CustomHeading>,
+        h3: ({ children }) => <CustomHeading level={3}>{children}</CustomHeading>,
+        h4: ({ children }) => <CustomHeading level={4}>{children}</CustomHeading>,
+        h5: ({ children }) => <CustomHeading level={5}>{children}</CustomHeading>,
+        h6: ({ children }) => <CustomHeading level={6}>{children}</CustomHeading>,
       }}
     >
       {content}

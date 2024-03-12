@@ -15,6 +15,7 @@ interface Props {
     children: React.ReactNode;
     className?: string;
     as?: ElementType;
+    id?: string
 }
 
 const tags: Record<Variant, ElementType> = {
@@ -39,9 +40,11 @@ const sizes: Record<Variant, string> = {
     small: "font-ubuntu text-sm sm:text-xs"
 };
 
-export const Heading = ({ variant, children, className, as }: Props) => {
+export const Heading = ({ variant, children, className, as, id }: Props) => {
     const sizeClasses = sizes[variant];
     const Tag = as || tags[variant];
 
-    return <Tag className={`${sizeClasses} ${className}`}>{children}</Tag>;
+    return <Tag className={`${sizeClasses} ${className}`} id={id}>{children}</Tag>;
 };
+
+export type { Variant }
