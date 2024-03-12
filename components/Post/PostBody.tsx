@@ -45,10 +45,11 @@ interface CustomHeadingProps {
 }
 
 const CustomHeading: React.FC<CustomHeadingProps> = ({ level, children }) => {
-  const id = children?.toString().toLowerCase().replace(/\s+/g, '-');
   const variant = `h${String(level)}` as Variant;
-
-  return <Heading variant={variant} id={id}>{children}</Heading>
+  const id = children?.toString().toLowerCase().replace(/\s+/g, '-');
+  return (
+    <Heading variant={variant} id={id} link>{children}</Heading>
+  );
 };
 
 const CustomAnchor: React.FC<CustomAnchorProps> = ({ href, children }) => {
@@ -60,6 +61,7 @@ const CustomAnchor: React.FC<CustomAnchorProps> = ({ href, children }) => {
 };
 
 export const PostBody = ({ content }: MarkdownRenderProps) => {
+
   return (
     <ReactMarkdown
       className={"md-article"}

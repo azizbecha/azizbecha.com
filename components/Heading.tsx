@@ -1,4 +1,8 @@
+"use client"
+
+import { usePathname } from "next/navigation";
 import React, { ElementType } from "react";
+import { FaLink } from "react-icons/fa6";
 
 type Variant =
     | "h1"
@@ -15,7 +19,8 @@ interface Props {
     children: React.ReactNode;
     className?: string;
     as?: ElementType;
-    id?: string
+    id?: string;
+    link?: boolean
 }
 
 const tags: Record<Variant, ElementType> = {
@@ -26,7 +31,7 @@ const tags: Record<Variant, ElementType> = {
     h5: "h5",
     body: "p",
     "body-small": "p",
-    small: "span"
+    small: "span",
 };
 
 const sizes: Record<Variant, string> = {
@@ -37,14 +42,37 @@ const sizes: Record<Variant, string> = {
     h5: "text-md font-bold font-ubuntu sm:text-lg",
     body: "text-md sm:text-lg",
     "body-small": "font-ubuntu text-sm sm:text-sm",
-    small: "font-ubuntu text-sm sm:text-xs"
+    small: "font-ubuntu text-sm sm:text-xs",
 };
 
-export const Heading = ({ variant, children, className, as, id }: Props) => {
+export const Heading = ({ variant, children, className, as, id, link }: Props) => {
     const sizeClasses = sizes[variant];
     const Tag = as || tags[variant];
+    const linkId = id ? `#${id}` : undefined;
 
-    return <Tag className={`${sizeClasses} ${className}`} id={id}>{children}</Tag>;
+    const path = usePathname();
+
+    return (
+        <div className="relative group flex items-center">
+            <Tag
+                className={`${sizeClasses} ${className} ${link && 'hover:underline'} pr-4`}
+                id={id}
+            >
+                {children}
+            </Tag>
+            {linkId && link && path && (
+                <button
+                    className="tooltip tooltip-left absolute -ml-10 opacity-0 group-hover:opacity-100 transition-opacity p-2"
+                    data-tip="Copy link"
+                    onClick={() => {
+                        navigator.clipboard.writeText(path+linkId);
+                    }}
+                >
+                    <FaLink className="h-6 w-6 cursor-pointer text-main hover:text-blue-600" />
+                </button>
+            )}
+        </div>
+    );
 };
 
-export type { Variant }
+export type { Variant };
