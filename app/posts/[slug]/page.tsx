@@ -26,7 +26,7 @@ export default async function Post({ params }: Params) {
     <main>
       <Container>
         <article>
-          <PostHeader title={post.title} date={post.date} contributors={post.contributors} />
+          <PostHeader title={post.title} date={post.date} content={post.content} contributors={post.contributors} />
           <div className="flex gap-3">
             <div className="sm:w-3/4 w-full">
               <PostImage image={post.image} />

@@ -1,12 +1,17 @@
+import Link from "next/link";
+
 import moment from "moment";
+import { readingTime } from 'reading-time-estimator'
+
+import { FaClock } from "react-icons/fa6";
+
 import ContributorsList from "./ContributorsList";
 import { Heading } from "../Heading";
-import { FaClock } from "react-icons/fa6";
-import Link from "next/link";
 
 interface Props {
     title: string,
     date: string,
+    content: string,
     contributors: string
 }
 
@@ -45,17 +50,22 @@ const BreadCrumb = () => {
 export const PostHeader = (props: Props) => {
     const formattedDate = moment(props.date).format('MMMM D, YYYY');
     const authors = props.contributors.split(/[,]+/);
+    const timeEstimation = readingTime(props.content);
 
     return (
         <div className="mb-5">
             <BreadCrumb />
 
             <Heading variant="h1" className="mb-5">{props.title}</Heading>
-            <time dateTime={props.date} className="flex font-mono italic text-emerald-500 font-semibold items-center">
-                <FaClock className="mr-1" size={13} /> {formattedDate}
+            <time dateTime={props.date} className="flex font-mono text-emerald-500 font-semibold items-center">
+                <FaClock className="mr-1" size={13} /> Published on {formattedDate}
             </time>
 
             <ContributorsList authors={authors} />
+            <span className="flex font-mono text-indigo-500 font-semibold items-center">
+                <FaClock className="mr-1" size={13} /> Reading time: {timeEstimation.text}
+            </span>
+
         </div>
     );
 }
