@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import AnimatedCursor from "react-animated-cursor"
 
 import Navbar from "@/components/Navbar";
+import AOSInit from "@/components/AOSInit";
 
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         <Toaster />
+        <AOSInit />
         <AnimatedCursor
           innerSize={8}
           outerSize={35}

@@ -4,7 +4,7 @@ interface Props {
     [key: string]: any
 }
 
-export const Container = (props: Props) => {
+const Container = (props: Props) => {
     const { children, className, ...otherProps } = props;
 
     const containerClasses = `flex flex-col min-h-screen w-full bg-grey text-white px-4 sm:px-32 ${className || ''}`;
@@ -15,3 +15,5 @@ export const Container = (props: Props) => {
         </div>
     )
 }
+
+export default Container
