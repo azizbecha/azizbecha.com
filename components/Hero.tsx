@@ -50,7 +50,7 @@ console.log('Thanks for exploring my TypeScript playground! 🚀');`;
             >
                 {content.trim()}
             </SyntaxHighlighter>
-            <p className='text-center mt-4 italic'>*sorry for the weird ui, i'm busy fixing database bugs*</p>
+            <p className='text-center mt-4 italic'>*sorry for the weird ui, i&apos;m busy fixing database bugs*</p>
         </div>
     );
 }

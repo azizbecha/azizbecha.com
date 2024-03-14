@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 interface Props {
     image: string
@@ -6,7 +7,7 @@ const PostImage: React.FC<Props> = (props) => {
     const { image } = props;
 
     return (
-        <img src={image} className="mb-8 rounded-3xl" data-aos="fade-up" />
+        <Image alt="" width={0} height={0} sizes="100vw" src={image} className="mb-5 rounded-3xl w-full" data-aos="fade-up" />
     )
 }
 

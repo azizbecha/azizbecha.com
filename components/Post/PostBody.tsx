@@ -90,7 +90,7 @@ export const PostBody = ({ content }: MarkdownRenderProps) => {
         pre: ({ className, ...pre }) => {
           const codeChunk = (pre as any).node.children[0].children[0].value as string;
 
-          const [copyTip, setCopyTip] = useState("Copy code");
+          let copyTip = "Copy code";
 
           const language =
             (pre as any).children.props.className.replace(
@@ -110,9 +110,9 @@ export const PostBody = ({ content }: MarkdownRenderProps) => {
                 <CopyToClipboard
                   text={codeChunk}
                   onCopy={async () => {
-                    setCopyTip("Copied");
+                    copyTip = "Copied";
                     await new Promise((resolve) => setTimeout(resolve, 1500));
-                    setCopyTip(`Copy code`);
+                    copyTip = "Copy code";
                   }}
                 >
                   <DocumentDuplicateIcon className="h-5 w-5 cursor-pointer hover:text-blue-600" />

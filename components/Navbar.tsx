@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 import { FaGithub } from "react-icons/fa6";
+import Image from "next/image";
 
 const navItems = [
   {
@@ -33,7 +34,7 @@ export default function NavBar() {
     <div className="w-full py-6 px-4 sm:px-32 z-[100] bg-grey text-white font-ubuntu backdrop-blur-md">
       <nav className="flex justify-center w-full z-[100]">
         <Link href="/" className="hidden md:flex justify-between items-center w-1/4">
-          <img className="w-10 h-10 rounded-full shadow" src="azizbecha.jpg" alt="" />
+          <Image width={10} height={10} sizes="100vw" className="w-10 h-10 rounded-full shadow" src="/azizbecha.jpg" alt="" />
         </Link>
         <div className="bg-gray-800 border-2 flex flex-row gap-2 relative justify-center mx-auto p-1.5 z-[100] rounded-3xl shadow">
           {navItems.map((item, index) => {
