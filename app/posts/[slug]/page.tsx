@@ -77,10 +77,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       description,
       siteName: "Aziz Becha",
       publishedTime: post.date,
-      authors: post.contributors.split(/[,]+/),
-      images: [{
-        url: post.image,
-      }],
+      authors: post.contributors.split(/[,]+/).map((contributor) => (contributor.trim())),
+      tags: post.tags.split(/[,]+/).map((tag) => (tag.trim())),
+      images: post.image,
     },
   };
 }
