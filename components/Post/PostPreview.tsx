@@ -9,12 +9,11 @@ interface Props {
     postId: string;
     title: string;
     date: string;
-    category: string
+    tags: string[]
     image: string
 }
 
 export const PostPreview: React.FC<Props> = (props) => {
-    const tags = props.category.split(",");
 
     return (
         <Link href={`posts/${props.postId}`}>
@@ -27,7 +26,7 @@ export const PostPreview: React.FC<Props> = (props) => {
                             {props.title}
                         </Heading>
                         <div className="flex items-center gap-2">
-                            {tags.map((tag, index) => (
+                            {props.tags.map((tag, index) => (
                                 <Tag tag={tag} key={index} />
                             ))}
                         </div>

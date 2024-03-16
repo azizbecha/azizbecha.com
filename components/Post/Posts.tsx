@@ -45,7 +45,7 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
                     key={key}
                     image={post.image}
                     date={post.date}
-                    category={post.tags}
+                    tags={post.tags}
                     postId={post.slug}
                     title={post.title}
                 />
