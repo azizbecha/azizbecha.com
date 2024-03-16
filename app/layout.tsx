@@ -4,10 +4,11 @@ import { Toaster } from "react-hot-toast";
 
 import AnimatedCursor from "react-animated-cursor"
 
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/Layout/Navbar";
 import AOSInit from "@/components/AOSInit";
 
 import "./globals.css";
+import ProgressBar from "@/components/Layout/ProgressBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar />
         <Toaster />
         <AOSInit />
+        <ProgressBar />
         <AnimatedCursor
           innerSize={8}
           outerSize={35}

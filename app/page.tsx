@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Container from "@/components/layout/Container";
+import Container from "@/components/Layout/Container";
 import { Button } from "@/components/Button";
 import Posts from "@/components/Post/Posts";
 import { Heading } from "@/components/Heading";
