@@ -4,9 +4,9 @@ import { Toaster } from "react-hot-toast";
 
 import AnimatedCursor from "react-animated-cursor"
 
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/Navbar";
 import AOSInit from "@/components/AOSInit";
-import ProgressBar from "@/components/layout/ProgressBar";
+import ProgressBar from "@/components/ProgressBar";
 
 import "./globals.css";
 
