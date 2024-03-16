@@ -4,6 +4,6 @@ export type Post = {
   date: string;
   image: string;
   content: string;
-  tags: string
+  tags: string[];
   contributors: string
 };

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaTag } from "react-icons/fa";
 import { Heading } from "../Heading";
 import Image from "next/image";
+import Tag from "./Tag";
 
 interface Props {
     postId: string;
@@ -27,12 +28,7 @@ export const PostPreview: React.FC<Props> = (props) => {
                         </Heading>
                         <div className="flex items-center gap-2">
                             {tags.map((tag, index) => (
-                                <span
-                                    key={index}
-                                    className="bg-main flex items-center text-xs sm:text-sm font-mono font-normal px-1.5 py-0.5 mt-1 rounded-md w-min"
-                                >
-                                    <FaTag className="mr-1 text-white" size={10} /> {tag.trim()}
-                                </span>
+                                <Tag tag={tag} key={index} />
                             ))}
                         </div>
                     </div>

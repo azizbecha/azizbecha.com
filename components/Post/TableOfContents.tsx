@@ -8,7 +8,7 @@ interface Props {
 
 const TableOfContents: React.FC<Props> = (props) => {
     return (
-        <div className='sticky top-5 bg-gray-800 px-4 py-3 rounded-3xl w-full'>
+        <div className='bg-gray-800 px-4 py-3 rounded-xl w-full'>
             <Heading variant="h5" className="mb-2 uppercase">Table of contents</Heading>
             <Toc markdownText={props.content} className="toc" />
         </div>

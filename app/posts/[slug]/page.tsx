@@ -12,6 +12,7 @@ import { PostHeader } from "@/components/Post/PostHeader";
 import SharePost from "@/components/Post/SharePost";
 import PostImage from "@/components/Post/PostImage";
 import TableOfContents from "@/components/Post/TableOfContents";
+import PostTags from "@/components/Post/PostTags";
 
 export default async function Post({ params }: Params) {
 
@@ -21,6 +22,7 @@ export default async function Post({ params }: Params) {
   if (!post) {
     return notFound();
   }
+
 
   return (
     <main>
@@ -33,7 +35,10 @@ export default async function Post({ params }: Params) {
               <PostBody content={post.content} />
             </div>
             <div className="sm:w-1/4 sm:block w-full hidden">
-              <TableOfContents content={post.content} />
+              <div className="space-y-3 sticky top-5">
+                <TableOfContents content={post.content} />
+                <PostTags tags={post.tags} />
+              </div>
             </div>
           </div>
         </article>
@@ -78,7 +83,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       siteName: "Aziz Becha",
       publishedTime: post.date,
       authors: post.contributors.split(/[,]+/).map((contributor) => (contributor.trim())),
-      tags: post.tags.split(/[,]+/).map((tag) => (tag.trim())),
+      tags: post.tags.map((tag) => (tag.trim())),
       images: post.image,
     },
   };

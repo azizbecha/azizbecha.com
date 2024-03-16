@@ -2,7 +2,10 @@
 title: "React Architecture: How to Structure and Organize a React Application"
 date: "2024-02-20"
 image: /react.jpg
-tags: code, react, js
+tags: 
+  - code
+  - react
+  - js
 contributors: Aziz Becha, Elon Musk, Jeff Bezos, Bill Gates
 ---
 # Get started
