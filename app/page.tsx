@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 import Container from "@/components/Layout/Container";
-import { Button } from "@/components/Button";
 import Posts from "@/components/Post/Posts";
+import { Button } from "@/components/Button";
 import { Heading } from "@/components/Heading";
 
 export default function Home() {

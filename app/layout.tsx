@@ -6,9 +6,9 @@ import AnimatedCursor from "react-animated-cursor"
 
 import Navbar from "@/components/Layout/Navbar";
 import AOSInit from "@/components/AOSInit";
+import ProgressBar from "@/components/Layout/ProgressBar";
 
 import "./globals.css";
-import ProgressBar from "@/components/Layout/ProgressBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
