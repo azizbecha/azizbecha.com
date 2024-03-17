@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import AnimatedCursor from "react-animated-cursor"
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import AOSInit from "@/components/AOSInit";
 import ProgressBar from "@/components/ProgressBar";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Footer />
       </body>
     </html>
   );
