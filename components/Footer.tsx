@@ -3,7 +3,6 @@ import { FaGithub, FaFacebook, FaLinkedin, FaCoffee } from 'react-icons/fa';
 
 import { Heading } from "./Heading";
 import { Divider } from "./Divider";
-import { env } from "process";
 
 const Footer = () => {
     return (
