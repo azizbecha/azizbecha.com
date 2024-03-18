@@ -1,43 +1,46 @@
-import moment from "moment";
 import Link from "next/link";
-import { FaTag } from "react-icons/fa";
 import Heading from "../Heading";
 import Image from "next/image";
 import Tag from "./Tag";
+import { readingTime } from "reading-time-estimator";
+import { Post } from "@/types";
 
 interface Props {
-    postId: string;
-    title: string;
-    date: string;
-    tags: string[]
-    image: string
+    post: Post
 }
 
 const PostPreview: React.FC<Props> = (props) => {
+    const { post } = props;
 
     return (
-        <Link href={`posts/${props.postId}`}>
-            <div className="group post-preview flex justify-between items-center gap-1 mt-1 mb-2 p-3 rounded-xl bg-grey">
-                <div className="flex items-center gap-2">
-                    <Image width={0} height={0} sizes="100vw" src={props.image} alt={`Image of ${props.title}`} className="mr-2 w-28 rounded-md" />
-
-                    <div className="flex flex-col">
-                        <Heading variant="h5" className="font-ubuntu font-medium text-lg text-grey-lighter hover:text-white hover:underline">
-                            {props.title}
-                        </Heading>
-                        <div className="flex items-center gap-2">
-                            {props.tags.map((tag, index) => (
-                                <Tag tag={tag} key={index} />
-                            ))}
-                        </div>
-                    </div>
+        <Link href={`posts/${post.slug}`}>
+            <div className="group post-preview p-3 rounded-xl bg-gray-800 cursor-pointer">
+                <div className="relative overflow-hidden mb-3 rounded-xl">
+                    <Image
+                        src={post.image}
+                        alt={`Image of ${post.title}`}
+                        layout="responsive"
+                        width={500}
+                        height={250}
+                        className="rounded-xl transition-transform duration-300 transform hover:scale-125"
+                    />
                 </div>
-                <p className="text-main text-right m-2 font-mono font-semibold hover:font-bold hover:underline">
-                    {moment(props.date, "YYYY-MM-DD").format("MMMM YYYY")}
+                <div className="mb-2">
+                    <Heading variant="h5" className="font-ubuntu font-medium text-white">
+                        {post.title}
+                    </Heading>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag, index) => (
+                        <Tag tag={tag} key={index} />
+                    ))}
+                </div>
+                <p className="text-main text-left mt-2 font-mono font-semibold hover:font-bold hover:underline">
+                    {readingTime(post.content).text}
                 </p>
             </div>
         </Link>
     );
 };
 
-export default PostPreview
+export default PostPreview;

@@ -39,18 +39,14 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
     }
 
     return (
-        <>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {posts.slice(0, limit).map((post, key) => (
                 <PostPreview
                     key={key}
-                    image={post.image}
-                    date={post.date}
-                    tags={post.tags}
-                    postId={post.slug}
-                    title={post.title}
+                    post={post}
                 />
             ))}
-        </>
+        </div>
     );
 };
 

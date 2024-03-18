@@ -22,7 +22,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <Posts limit={5} />
+          <Posts limit={3} />
         </Tile>
       </Container>
 

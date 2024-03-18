@@ -21,7 +21,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { Heading, Variant } from "../Heading";
+import Heading, { Variant } from "../Heading";
 
 SyntaxHighlighter.registerLanguage("tsx", tsx);
 SyntaxHighlighter.registerLanguage("typescript", typescript);
