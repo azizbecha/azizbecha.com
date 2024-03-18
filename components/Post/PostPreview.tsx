@@ -17,9 +17,9 @@ export const PostPreview: React.FC<Props> = (props) => {
 
     return (
         <Link href={`posts/${props.postId}`}>
-            <div className="group post-preview flex justify-between items-center gap-1 mt-1 mb-2 py-4">
+            <div className="group post-preview flex justify-between items-center gap-1 mt-1 mb-2 p-3 rounded-xl bg-grey">
                 <div className="flex items-center gap-2">
-                    <Image width={0} height={0} sizes="100vw" src={props.image} alt={`Image of ${props.title}`} className="mr-2 w-14 rounded-md" />
+                    <Image width={0} height={0} sizes="100vw" src={props.image} alt={`Image of ${props.title}`} className="mr-2 w-28 rounded-md" />
 
                     <div className="flex flex-col">
                         <Heading variant="h5" className="font-ubuntu font-medium text-lg text-grey-lighter hover:text-white hover:underline">
