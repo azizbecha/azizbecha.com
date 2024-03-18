@@ -1,7 +1,7 @@
 import moment from "moment";
 import Link from "next/link";
 import { FaTag } from "react-icons/fa";
-import { Heading } from "../Heading";
+import Heading from "../Heading";
 import Image from "next/image";
 import Tag from "./Tag";
 
@@ -13,7 +13,7 @@ interface Props {
     image: string
 }
 
-export const PostPreview: React.FC<Props> = (props) => {
+const PostPreview: React.FC<Props> = (props) => {
 
     return (
         <Link href={`posts/${props.postId}`}>
@@ -39,3 +39,5 @@ export const PostPreview: React.FC<Props> = (props) => {
         </Link>
     );
 };
+
+export default PostPreview

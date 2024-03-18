@@ -2,8 +2,8 @@ import Link from "next/link";
 
 import Container from "@/components/Container";
 import Posts from "@/components/Post/Posts";
-import { Button } from "@/components/Button";
-import { Heading } from "@/components/Heading";
+import Button from "@/components/Button";
+import Heading from "@/components/Heading";
 import { Hero } from "@/components/Hero";
 import Tile from "@/components/Tile";
 

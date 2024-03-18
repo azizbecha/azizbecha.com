@@ -18,7 +18,7 @@ type ButtonProps = (PrimaryButtonProps | SecondaryButtonProps) & {
     primary?: boolean; // Allow defaulting to primary
 };
 
-export const Button = (props: ButtonProps) => {
+const Button = (props: ButtonProps) => {
     const { primary, secondary, children, className, onClick } = props;
 
     const isPrimary = primary || (!primary && !secondary);
@@ -31,3 +31,5 @@ export const Button = (props: ButtonProps) => {
         </button>
     );
 }
+
+export default Button

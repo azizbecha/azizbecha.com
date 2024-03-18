@@ -1,8 +1,8 @@
 import { IoIosHeart } from "react-icons/io";
 import { FaGithub, FaFacebook, FaLinkedin, FaCoffee } from 'react-icons/fa';
 
-import { Heading } from "./Heading";
-import { Divider } from "./Divider";
+import Heading from "./Heading";
+import Divider from "./Divider";
 
 const Footer = () => {
     return (

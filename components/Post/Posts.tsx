@@ -2,7 +2,7 @@
 
 import { FC, useEffect, useState } from "react";
 import { Post } from "@/types";
-import { PostPreview } from "./PostPreview";
+import PostPreview from "./PostPreview";
 import PostSkeletonLoader from "./PostSkeletonLoader";
 
 interface Props {

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Button } from './Button';
-import { Heading } from './Heading';
+import Button from './Button';
+import Heading from './Heading';
 import Tile from './Tile';
 
 export const Hero = () => {

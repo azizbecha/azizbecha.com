@@ -1,6 +1,6 @@
 import React from "react";
 import Toc from "react-toc";
-import { Heading } from "../Heading";
+import Heading from "../Heading";
 
 interface Props {
     content: string;

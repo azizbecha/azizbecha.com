@@ -1,4 +1,4 @@
-import { Heading } from "../Heading"
+import Heading from "../Heading"
 import Tag from "./Tag"
 
 interface Props {

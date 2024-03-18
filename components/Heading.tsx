@@ -46,7 +46,7 @@ const sizes: Record<Variant, string> = {
     small: "font-ubuntu text-sm sm:text-xs",
 };
 
-export const Heading = ({ variant, children, className, as, id, link }: Props) => {
+const Heading = ({ variant, children, className, as, id, link }: Props) => {
     const sizeClasses = sizes[variant];
     const Tag = as || tags[variant];
     const linkId = id ? `#${id}` : undefined;
@@ -78,3 +78,4 @@ export const Heading = ({ variant, children, className, as, id, link }: Props) =
 };
 
 export type { Variant };
+export default Heading
