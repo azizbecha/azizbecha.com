@@ -22,7 +22,6 @@ const PostPreview: React.FC<Props> = (props) => {
                     <Image
                         src={post.image}
                         alt={`Image of ${post.title}`}
-                        layout="responsive"
                         width={500}
                         height={250}
                         className="rounded-xl transition-transform duration-300 transform hover:scale-125"

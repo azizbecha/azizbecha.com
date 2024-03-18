@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import Link from "next/link";
 
 import ReactMarkdown from "react-markdown";
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -54,9 +54,9 @@ const CustomHeading: React.FC<CustomHeadingProps> = ({ level, children }) => {
 
 const CustomAnchor: React.FC<CustomAnchorProps> = ({ href, children }) => {
   return (
-    <a href={href} target="_blank" className="font-medium text-main underline">
+    <Link href={href} target="_blank" className="font-medium text-main underline">
       {children}
-    </a>
+    </Link>
   );
 };
 
