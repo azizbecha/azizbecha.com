@@ -7,6 +7,7 @@ import Heading from "../Heading";
 import Button from "../Button";
 
 import { Post } from "@/types";
+import { FaClock } from "react-icons/fa6";
 
 interface Props {
     post: Post;
@@ -32,16 +33,17 @@ const PostPreview: React.FC<Props> = (props) => {
                         {post.title}
                     </Heading>
                 </div>
-                
+
                 <div className="flex justify-between items-center gap-2">
-                    <div className="flex items-center">
-                        <p className="text-main text-left font-mono font-semibold hover:font-bold hover:underline mr-2">
-                            {readingTime(post.content).text}
-                        </p>
-                    </div>
                     <Link href={`posts/${post.slug}`}>
                         <Button secondary>Read More</Button>
                     </Link>
+                    <div className="flex items-center gap-1 text-main">
+                        <FaClock size={13} /> 
+                        <p className="text-left font-ubuntu font-semibold hover:font-bold hover:underline">
+                            {readingTime(post.content).text}
+                        </p>
+                    </div>
                 </div>
             </div>
         </Link>
