@@ -23,7 +23,7 @@ export const Button = (props: ButtonProps) => {
 
     const isPrimary = primary || (!primary && !secondary);
 
-    const buttonClass = `bg-${isPrimary ? 'main' : 'grey'} font-ubuntu font-medium text-white px-4 py-2 rounded-lg ${className || ''}`;
+    const buttonClass = `bg-${isPrimary ? 'main' : 'grey'} font-ubuntu font-medium text-white text-center px-3.5 sm:px-4 py-2 rounded-lg ${className || ''}`;
 
     return (
         <button className={buttonClass} onClick={onClick}>

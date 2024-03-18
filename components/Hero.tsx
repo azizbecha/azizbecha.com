@@ -5,7 +5,7 @@ import { Heading } from './Heading';
 export const Hero = () => {
 
     return (
-        <div className="my-5 bg-black p-7 rounded-xl animated-border border-2 border-transparent">
+        <div className="animated-border border-2 border-transparent my-5 bg-black p-7 rounded-xl">
             <div className="mb-2">
                 <Heading variant='h1' className="hero-title text-main font-ubuntu font-bold text-5xl mb-3">
                     Hey, I&apos;m Aziz Becha ✨

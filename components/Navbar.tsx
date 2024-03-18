@@ -71,12 +71,13 @@ export default function NavBar() {
         <div className="hidden md:flex justify-end items-center w-1/4 gap-2">
           <a href="https://github.com/azizbecha" target="_blank" rel="noopener noreferrer">
             <div className="flex items-center justify-center">
-              <div className="bg-gray-800 text-white text-center rounded-full p-2 w-10 h-10 shadow animated-border border-2 border-transparent">
-                <FaGithub size={20} />
+              <div className="bg-gray-800 text-white text-center justify-center rounded-full p-2 w-10 h-10 shadow animated-border border border-transparent">
+                <FaGithub size={22} style={{ display: 'block', margin: 'auto' }} />
               </div>
             </div>
           </a>
         </div>
+
       </nav>
     </div>
   );
