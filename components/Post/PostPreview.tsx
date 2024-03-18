@@ -1,12 +1,15 @@
 import Link from "next/link";
-import Heading from "../Heading";
 import Image from "next/image";
-import Tag from "./Tag";
+
 import { readingTime } from "reading-time-estimator";
+
+import Heading from "../Heading";
+import Button from "../Button";
+
 import { Post } from "@/types";
 
 interface Props {
-    post: Post
+    post: Post;
 }
 
 const PostPreview: React.FC<Props> = (props) => {
@@ -30,14 +33,17 @@ const PostPreview: React.FC<Props> = (props) => {
                         {post.title}
                     </Heading>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag, index) => (
-                        <Tag tag={tag} key={index} />
-                    ))}
+                
+                <div className="flex justify-between items-center gap-2">
+                    <div className="flex items-center">
+                        <p className="text-main text-left font-mono font-semibold hover:font-bold hover:underline mr-2">
+                            {readingTime(post.content).text}
+                        </p>
+                    </div>
+                    <Link href={`posts/${post.slug}`}>
+                        <Button secondary>Read More</Button>
+                    </Link>
                 </div>
-                <p className="text-main text-left mt-2 font-mono font-semibold hover:font-bold hover:underline">
-                    {readingTime(post.content).text}
-                </p>
             </div>
         </Link>
     );
