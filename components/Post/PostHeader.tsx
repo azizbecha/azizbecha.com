@@ -12,7 +12,7 @@ interface Props {
     title: string,
     date: string,
     content: string,
-    contributors: string
+    contributors: string[]
 }
 
 const BreadCrumb = () => {
@@ -49,7 +49,7 @@ const BreadCrumb = () => {
 
 export const PostHeader = (props: Props) => {
     const formattedDate = moment(props.date).format('MMMM D, YYYY');
-    const authors = props.contributors.split(/[,]+/);
+    const authors = props.contributors;
     const timeEstimation = readingTime(props.content);
 
     return (

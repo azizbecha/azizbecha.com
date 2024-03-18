@@ -6,7 +6,11 @@ tags:
   - code
   - react
   - js
-contributors: Aziz Becha, Elon Musk, Jeff Bezos, Bill Gates
+contributors: 
+ - Aziz Becha
+ - Elon Musk
+ - Jeff Bezos
+ - Bill Gates
 ---
 # Get started
 ## What is React
