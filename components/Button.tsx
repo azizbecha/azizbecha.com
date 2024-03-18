@@ -1,5 +1,5 @@
 interface CommonButtonProps {
-    text: string;
+    children: React.ReactNode;
     className?: string;
     onClick?: () => void;
 }
@@ -19,7 +19,7 @@ type ButtonProps = (PrimaryButtonProps | SecondaryButtonProps) & {
 };
 
 export const Button = (props: ButtonProps) => {
-    const { primary, secondary, text, className, onClick } = props;
+    const { primary, secondary, children, className, onClick } = props;
 
     const isPrimary = primary || (!primary && !secondary);
 
@@ -27,7 +27,7 @@ export const Button = (props: ButtonProps) => {
 
     return (
         <button className={buttonClass} onClick={onClick}>
-            {text}
+            {children}
         </button>
     );
 }
