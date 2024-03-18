@@ -42,6 +42,9 @@ export const Hero = () => {
         setJoke(null);
     };
 
+    /*https://www.myinstants.com/media/sounds/another-one_dPvHt2Z.mp3*/
+
+
     return (
         <Tile className="animated-border border-2 border-transparent my-5">
             <div className="mb-2">
@@ -66,7 +69,7 @@ export const Hero = () => {
             </div>
 
             {showJoke && !loading && (
-                <div data-aos="fade-down" data-aos-duration="250" className="p-4 bg-gray-800 rounded-xl mt-3 relative">
+                <div data-aos="fade-down" data-aos-duration="250" className="p-4 bg-emerald-600 rounded-xl mt-3 relative">
                     <button className="absolute top-2 right-2" onClick={handleCloseJoke}>
                         <FaTimesCircle className="h-5 w-5 text-white" />
                     </button>
@@ -75,7 +78,7 @@ export const Hero = () => {
             )}
 
             {loading && (
-                <div data-aos="fade-down" data-aos-duration="250" className="p-4 bg-gray-800 rounded-xl mt-3 flex justify-center items-center gap-2">
+                <div data-aos="fade-down" data-aos-duration="250" className="p-4 bg-sky-500 rounded-xl mt-3 flex justify-center items-center gap-2">
                     <div
                         className="inline-block h-6 w-6 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
                         role="status"
