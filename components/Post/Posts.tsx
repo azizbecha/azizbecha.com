@@ -34,18 +34,17 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
         fetchPosts();
     }, []);
 
-    if (loading) {
-        return <PostSkeletonLoader />
-    }
-
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {posts.slice(0, limit).map((post, key) => (
-                <PostPreview
-                    key={key}
-                    post={post}
-                />
-            ))}
+            {
+                loading ? (
+                    <PostSkeletonLoader />
+                ) : posts.slice(0, limit).map((post, key) => (
+                    <PostPreview
+                        key={key}
+                        post={post}
+                    />
+                ))}
         </div>
     );
 };
