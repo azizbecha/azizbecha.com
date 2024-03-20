@@ -8,7 +8,7 @@ interface Props {
 const Tile: React.FC<Props> = (props) => {
 
     const tileClassName = clsx(
-        'bg-black p-6 rounded-x',
+        'bg-black p-6 rounded-xl',
         props.className && props.className
     );
 
