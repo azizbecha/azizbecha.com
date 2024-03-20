@@ -39,15 +39,16 @@ const tags: Record<Variant, ElementType> = {
 };
 
 const sizes: Record<Variant, string> = {
-    h1: "text-3xl font-bold font-ubuntu sm:text-5xl",
-    h2: "text-2xl font-bold font-ubuntu sm:text-4xl",
-    h3: "text-xl font-bold font-ubuntu sm:text-3xl",
-    h4: "text-lg font-bold font-ubuntu sm:text-2xl",
-    h5: "text-md font-bold font-ubuntu sm:text-lg",
-    body: "text-md sm:text-lg",
-    "body-small": "font-ubuntu text-sm sm:text-sm",
-    small: "font-ubuntu text-sm sm:text-xs",
+    h1: "text-xl font-bold font-ubuntu sm:text-3xl md:text-4xl lg:text-5xl",
+    h2: "text-lg font-bold font-ubuntu sm:text-2xl md:text-3xl lg:text-4xl",
+    h3: "text-base font-bold font-ubuntu sm:text-xl md:text-2xl lg:text-3xl",
+    h4: "text-base font-bold font-ubuntu sm:text-lg md:text-xl lg:text-2xl",
+    h5: "text-sm font-bold font-ubuntu sm:text-md md:text-lg lg:text-xl",
+    body: "text-sm sm:text-base md:text-lg lg:text-xl",
+    "body-small": "font-ubuntu text-xs sm:text-sm md:text-base lg:text-lg",
+    small: "font-ubuntu text-xs sm:text-xs md:text-sm lg:text-sm",
 };
+
 
 const Heading = ({ variant, children, className, as, id, link }: Props) => {
     const sizeClasses = sizes[variant];
@@ -64,13 +65,14 @@ const Heading = ({ variant, children, className, as, id, link }: Props) => {
     );
 
     return (
-        <div className={`${linkId && link && path && "relative group flex items-center py-1"}`}>
+        <div className={`${linkId && link && path && "relative group flex items-center py-0.5"}`}>
             <Tag
-                className={tagClassName}
+                className={`${tagClassName} ${linkId && link && path && "relative group flex items-center py-1"}`}
                 id={id}
             >
                 {children}
             </Tag>
+
             {linkId && link && path && (
                 <button
                     className="tooltip tooltip-left absolute -ml-10 opacity-0 group-hover:opacity-100 transition-opacity p-2"

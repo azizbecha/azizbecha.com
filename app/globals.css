@@ -64,29 +64,8 @@
     color: #fff;
 }
 
-.md-article h1 {
-    color: #fff;
-    @apply font-semibold text-3xl;
-}
-
 .md-article h2 {
-    color: #fff;
-    @apply font-medium text-2xl;
-}
-
-.md-article h3 {
-    color: #fff;
-    @apply font-medium text-xl;
-}
-
-.md-article h4 {
-    color: #fff;
-    @apply font-normal text-lg;
-}
-
-.md-article h5 {
-    color: #fff;
-    @apply font-normal text-base;
+    @apply text-main;
 }
 
 .md-article p {
