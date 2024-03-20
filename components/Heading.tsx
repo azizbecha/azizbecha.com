@@ -64,7 +64,7 @@ const Heading = ({ variant, children, className, as, id, link }: Props) => {
     );
 
     return (
-        <div className="relative group flex items-center py-1">
+        <div className={`${linkId && link && path && "relative group flex items-center py-1"}`}>
             <Tag
                 className={tagClassName}
                 id={id}

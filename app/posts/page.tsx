@@ -1,14 +1,20 @@
-import PostPreview from "@/components/Post/PostPreview";
-import { getAllPosts } from "@/lib/api";
-import { Post } from "@/types";
+import Container from "@/components/Container";
+import Divider from "@/components/Divider";
+import Heading from "@/components/Heading";
+import Posts from "@/components/Post/Posts";
 
-export default function Posts() {
-    const allPosts: Post[] = getAllPosts();
+export default function AllPosts() {
 
     return (
-        allPosts.map((post, key) => {
-            return <PostPreview key={key} post={post} />
-
-        })
+        <Container>
+            <Heading variant="h1" className="text-main text-center mb-3 mt-5">
+                Blog ✍️
+            </Heading>
+            <Heading variant="body" className="text-center">
+                📚 From Code to Life: Our Blog Hub for Coding, Design, Life Tips, Books, and Business 🖥️📚💼
+            </Heading>
+            <Divider />
+            <Posts />
+        </Container>
     )
 }

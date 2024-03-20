@@ -9,7 +9,7 @@ interface Props {
     limit?: number;
 }
 
-const Posts: FC<Props> = ({ limit = 0 }) => {
+const Posts: FC<Props> = ({ limit }) => {
     const [posts, setPosts] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -34,12 +34,15 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
         fetchPosts();
     }, []);
 
+    // Sort posts based on limit
+    const sortedPosts = limit ? posts.slice(0, limit).sort((a, b) => b.date.localeCompare(a.date)) : posts;
+
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {
                 loading ? (
                     <PostSkeletonLoader />
-                ) : posts.slice(0, limit).map((post, key) => (
+                ) : sortedPosts.map((post, key) => (
                     <PostPreview
                         key={key}
                         post={post}
