@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { Post } from "@/types";
 import PostPreview from "./PostPreview";
 import PostSkeletonLoader from "./PostSkeletonLoader";
+import MultipleSkeletonLoaders from "./MultipleSkeletonLoaders";
 
 interface Props {
     limit?: number;
@@ -41,7 +42,7 @@ const Posts: FC<Props> = ({ limit }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {
                 loading ? (
-                    <PostSkeletonLoader />
+                    <MultipleSkeletonLoaders />
                 ) : sortedPosts.map((post, key) => (
                     <PostPreview
                         key={key}
