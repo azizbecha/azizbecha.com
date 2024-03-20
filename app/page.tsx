@@ -25,7 +25,6 @@ export default function Home() {
           <Posts limit={3} />
         </Tile>
       </Container>
-
     </main>
   );
 }

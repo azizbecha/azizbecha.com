@@ -10,6 +10,7 @@ import AOSInit from "@/components/AOSInit";
 import ProgressBar from "@/components/ProgressBar";
 
 import "./globals.css";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   title: "Aziz Becha",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Toaster />
         <AOSInit />
         <ProgressBar />
+        <ScrollToTopButton />
         <AnimatedCursor
           innerSize={8}
           outerSize={35}

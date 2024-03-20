@@ -25,9 +25,9 @@ export default async function Post({ params }: Params) {
 
 
   return (
-    <main>
+    <main className="my-5">
       <Container>
-        <article>
+        <article className="mb-5">
           <PostHeader title={post.title} date={post.date} content={post.content} contributors={post.contributors} />
           <div className="flex gap-3">
             <div className="sm:w-3/4 w-full">
