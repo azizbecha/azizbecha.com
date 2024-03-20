@@ -1,19 +1,22 @@
+import React from 'react';
+import clsx from 'clsx';
+
 interface Props {
     children: React.ReactNode,
-    className? : string,
+    className?: string,
     [key: string]: any
 }
 
 const Container = (props: Props) => {
     const { children, className, ...otherProps } = props;
 
-    const containerClasses = `flex flex-col min-h-screen w-full bg-grey text-white px-4 sm:px-32 ${className || ''}`;
+    const containerClasses = `flex flex-col min-h-screen w-full bg-grey text-white px-4 sm:px-8 md:px-10 lg:px-32`;
 
     return (
-        <div {...otherProps} className={containerClasses}>
-            {props.children}
+        <div {...otherProps} className={clsx(containerClasses, className)}>
+            {children}
         </div>
     )
 }
 
-export default Container
+export default Container;

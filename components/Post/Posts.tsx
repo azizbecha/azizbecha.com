@@ -44,7 +44,8 @@ const Posts: FC<Props> = ({ limit = 0 }) => {
                         key={key}
                         post={post}
                     />
-                ))}
+                ))
+            }
         </div>
     );
 };
