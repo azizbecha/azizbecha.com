@@ -7,7 +7,7 @@ export default function Posts() {
 
     return (
         allPosts.map((post, key) => {
-            return <PostPreview key={key} image={post.image} date={post.date} tags={post.tags} postId={post.slug} title={post.title} />
+            return <PostPreview key={key} post={post} />
 
         })
     )
