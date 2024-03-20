@@ -31,6 +31,25 @@
     }
 }
 
+/* Custom scrollbar on desktop */
+@media (min-width: 576px) {
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-main;
+        border-radius: 5px;
+    }
+}
+
+
 .animated-border {
     border-color: #BB2649;
     animation: borderAnimation 3s infinite;
@@ -93,11 +112,13 @@
 }
 
 .toc {
-    @apply list-inside text-gray-300 font-ubuntu; /* Inverse color for the top-level ul text */
+    @apply list-inside text-gray-300 font-ubuntu;
+    /* Inverse color for the top-level ul text */
 }
 
 .toc ul {
-    @apply list-inside list-item ml-3; /* Inverse color for the nested ul text */
+    @apply list-inside list-item ml-3;
+    /* Inverse color for the nested ul text */
 }
 
 .toc li {
