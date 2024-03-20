@@ -1,8 +1,11 @@
 "use client"
 
-import { usePathname } from "next/navigation";
 import React, { ElementType } from "react";
+import { usePathname } from "next/navigation";
+
+import clsx from "clsx";
 import toast from "react-hot-toast";
+
 import { FaLink } from "react-icons/fa6";
 
 type Variant =
@@ -53,10 +56,17 @@ const Heading = ({ variant, children, className, as, id, link }: Props) => {
 
     const path = usePathname();
 
+    const tagClassName = clsx(
+        "pr-4",
+        className,
+        sizeClasses,
+        link && 'hover:underline'
+    );
+
     return (
         <div className="relative group flex items-center py-1">
             <Tag
-                className={`${sizeClasses} ${className} ${link && 'hover:underline'} pr-4`}
+                className={tagClassName}
                 id={id}
             >
                 {children}

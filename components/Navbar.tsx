@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import { motion } from "framer-motion";
 
 import { FaGithub } from "react-icons/fa6";
-import Image from "next/image";
 
 const navItems = [
   {
