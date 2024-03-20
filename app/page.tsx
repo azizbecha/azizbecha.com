@@ -4,12 +4,12 @@ import Container from "@/components/Container";
 import Posts from "@/components/Post/Posts";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-import { Hero } from "@/components/Hero";
+import Hero from "@/components/Hero";
 import Tile from "@/components/Tile";
 
 export default function Home() {
   return (
-    <main>
+    <main className="my-5">
       <Container>
         <Hero />
         <Tile>

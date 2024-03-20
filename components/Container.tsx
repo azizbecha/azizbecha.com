@@ -10,7 +10,7 @@ interface Props {
 const Container = (props: Props) => {
     const { children, className, ...otherProps } = props;
 
-    const containerClasses = `flex flex-col min-h-screen w-full bg-grey text-white px-4 sm:px-8 md:px-10 lg:px-32`;
+    const containerClasses = `flex flex-col min-h-screen w-full text-white px-4 sm:px-8 md:px-10 lg:px-32`;
 
     return (
         <div {...otherProps} className={clsx(containerClasses, className)}>

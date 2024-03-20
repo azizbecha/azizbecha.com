@@ -6,13 +6,13 @@ import Divider from "./Divider";
 
 const Footer = () => {
     return (
-        <div className="bg-gray-800 text-white font-ubuntu py-5 px-2 sm:px-32">
+        <div className="bg-gray-800 text-white font-ubuntu px-4 py-6 sm:px-8 md:px-10 lg:px-32">
             <div className="flex flex-col sm:flex-row w-full">
                 <div className="sm:w-3/4">
                     <Heading variant="h4">Aziz Becha</Heading>
                     <p className="text-xs sm:text-sm">
                         I design and code beautifully simple things. I do what I love and I love what I do. <br />
-                        Busy fixing bugs now, I'll write a proper bio later.
+                        Busy fixing bugs now, I&apos;ll write a proper bio later.
                     </p>
                 </div>
                 <div className="flex justify-end items-center sm:w-1/4 mt-4 sm:mt-0">
@@ -33,7 +33,7 @@ const Footer = () => {
                     <li><a href="/contact" className="text-white">Contact</a></li>
                 </ul>
             </div>
-            
+
             <div className="flex justify-center mt-5">
                 <span className="text-center text-sm flex gap-1 items-center font-mono">
                     &copy; {new Date().getFullYear()} Aziz Becha - Made with a lot of <IoIosHeart className="text-main" /> & <FaCoffee className="text-yellow-900" />

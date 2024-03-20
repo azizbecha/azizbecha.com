@@ -12,7 +12,7 @@ import Button from './Button';
 import Heading from './Heading';
 import Tile from './Tile';
 
-export const Hero = () => {
+const Hero = () => {
     const [joke, setJoke] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [showJoke, setShowJoke] = useState<boolean>(false);
@@ -42,11 +42,8 @@ export const Hero = () => {
         setJoke(null);
     };
 
-    /*https://www.myinstants.com/media/sounds/another-one_dPvHt2Z.mp3*/
-
-
     return (
-        <Tile className="animated-border border-2 border-transparent my-5">
+        <Tile className="animated-border border-2 border-transparent mb-5">
             <div className="mb-2">
                 <Heading variant='h1' className="hero-title text-main font-ubuntu font-bold text-5xl mb-3">
                     Hey, I&apos;m Aziz Becha ✨
@@ -90,3 +87,5 @@ export const Hero = () => {
         </Tile>
     );
 }
+
+export default Hero
