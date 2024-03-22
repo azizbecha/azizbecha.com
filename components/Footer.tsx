@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row w-full">
                 <div className="sm:w-3/4">
                     <Heading variant="h4">Aziz Becha</Heading>
-                    <p className="text-xs sm:text-sm">
+                    <p className="text-xs sm:text-sm mt-2">
                         I design and code beautifully simple things. I do what I love and I love what I do. <br />
                         Busy fixing bugs now, I&apos;ll write a proper bio later.
                     </p>

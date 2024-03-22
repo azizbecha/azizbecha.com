@@ -38,7 +38,7 @@ const PostPreview: React.FC<Props> = (props) => {
                     <Link href={`posts/${post.slug}`}>
                         <Button secondary>Read More</Button>
                     </Link>
-                    <div className="flex items-center gap-1 text-main">
+                    <div className="flex items-center gap-1 text-gray-500">
                         <FaClock size={13} /> 
                         <p className="text-left font-ubuntu font-semibold hover:font-bold hover:underline">
                             {readingTime(post.content).text}
