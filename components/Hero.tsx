@@ -57,8 +57,8 @@ const Hero = () => {
 
             <div className="flex gap-3">
                 <Link href="about">
-                    <Button>
-                        Learn more
+                    <Button className='my-auto'>
+                        Learn more 👉
                     </Button>
                 </Link>
 
