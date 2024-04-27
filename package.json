@@ -36,7 +36,6 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
-    "sass": "^1.71.1",
     "validator": "^13.11.0"
   },
   "devDependencies": {
