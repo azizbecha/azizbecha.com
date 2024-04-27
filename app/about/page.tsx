@@ -6,6 +6,8 @@ import Divider from "@/components/Divider"
 import Heading from "@/components/Heading"
 import Tile from "@/components/Tile"
 import Button from "@/components/Button"
+import { FaFacebookSquare } from "react-icons/fa"
+import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 
 function calculateAge(): number {
     const birthDate: Date = new Date("2005-05-12");
@@ -120,6 +122,64 @@ const Projects = () => {
     )
 }
 
+const Socials = () => {
+
+    const elements = [
+        {
+            name: "GitHub",
+            link: "https://github.com/azizbecha",
+            icon: FaGithub
+        },
+        {
+            name: "Twitter ~ X",
+            link: "https://x.com/azizbechaa",
+            icon: FaXTwitter
+        },
+        {
+            name: "LinkedIn",
+            link: "https://linkedin.com/in/azizbecha",
+            icon: FaLinkedin
+        },
+        {
+            name: "Facebook",
+            link: "https://facebook.com/azizbechaa",
+            icon: FaFacebook
+        },
+        {
+            name: "Instagram",
+            link: "https://instagram.com/azizbechaa",
+            icon: FaInstagram
+        },
+        {
+            name: "Email",
+            link: "mailto:aziz07becha@gmail.com",
+            icon: FaEnvelope
+        },
+    ];
+
+    return (
+        <section id="socials">
+            <Tile>
+                <Heading variant="h2" className="mb-4 font-serif">Socials 🌐</Heading>
+                <Heading variant="small">
+                    I&apos;m not very active on socials, but here are mine anyway 👇
+                </Heading>
+
+                <div className="grid grid-cols-1 sm:grid-cols-6 gap-2 mt-4">
+                    {
+                        elements.map((element, key) => (
+                            <a href={element.link} target="_blank" rel="noreferrer" className="p-2 bg-main rounded-lg h-36 justify-center items-center flex flex-col text-center hover:p-5 hover:shadow hover:drop-shadow-sm transition-all hover:shadow-white" key={key}>
+                                <element.icon size={50} />
+                                <div className="mt-2">{element.name}</div>
+                            </a>
+                        ))
+                    }
+                </div>
+            </Tile>
+        </section>
+    )
+}
+
 const About = () => {
 
     const [activeTab, setActiveTab] = useState('about');
@@ -207,9 +267,7 @@ const About = () => {
 
             <Divider />
 
-            <section id="socials">
-                <Heading variant="h2" className="mb-4 font-serif">Socials 🌐</Heading>
-            </section>
+            <Socials />
 
             <Divider />
 
