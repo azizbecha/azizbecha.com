@@ -57,7 +57,7 @@ type Params = {
   };
 };
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({ params, req }: Params & { req: any }): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
@@ -69,6 +69,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const description = (
     await remark().use(html).process(post.content.substring(0, 251))
   ).toString().replace(/(<([^>]+)>)/gi, '');
+
+  // Function to get the full URL for the image
+  const getFullUrl = (path: string): string => {
+    const domain = req ? `${req.protocol}://${req.get('host')}` : 'http://localhost:3000';
+    return `${domain}${path}`;
+  };
 
   return {
     title: `${title} | Aziz Becha`,
@@ -85,7 +91,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       publishedTime: post.date,
       authors: post.contributors.map((contributor) => (contributor.trim())),
       tags: post.tags.map((tag) => (tag.trim())),
-      images: post.image,
+      images: getFullUrl(post.image),
     },
   };
 }
