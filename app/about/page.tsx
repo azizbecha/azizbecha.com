@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
+
 import Container from "@/components/Container"
 import Divider from "@/components/Divider"
 import Heading from "@/components/Heading"
 import Tile from "@/components/Tile"
 import Button from "@/components/Button"
-import { FaFacebookSquare } from "react-icons/fa"
+
 import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6"
 
 function calculateAge(): number {
@@ -66,21 +67,26 @@ const Projects = () => {
     const elements = [
         {
             name: "ShibHouse",
-            description: "Shibhouse is a voice-chatting, podcasts, meme-based platform created as a joke which went viral in a short time trying to re-take voice conversations to the moon 🚀",
+            description: "Shibhouse is a voice-chatting, podcasts, meme-based platform created as a joke that went viral in a short time to re-take voice conversations to the moon 🚀",
             image: "https://user-images.githubusercontent.com/63454940/196781985-bbddadb9-0fdb-4aae-a780-51bf5bfeffe2.png",
             link: "https://github.com/azizbecha/shibhouse"
         },
-
         {
             name: "RapidSocket",
-            image: "../rs.png",
+            image: "../rapidsocket.png",
             description: "RapidSocket S is the ultimate smart socket for your home automation needs. This innovative device brings a new level of convenience and control to your home.",
             link: "https://www.youtube.com/watch?v=qFxaPVS9yBY"
         },
         {
             name: "VSJoke",
             image: "../vsjoke.png",
-            description: "VSJoke is a VSCode extension made for humour purposes by showing some random programming-related jokes in the IDE notifications with custom languages and filters.",
+            description: "VSJoke is a VSCode extension made for humour purposes that brings programming-related jokes in your workspace with custom languages and filters.",
+            link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
+        },
+        {
+            name: "VSAdhkar",
+            image: "../vsadhkar.png",
+            description: "VSAdhkar is a VSCode extension that brings daily adhkar and dua directly into your workspace to stay spiritually connected while you work.",
             link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
         },
         {

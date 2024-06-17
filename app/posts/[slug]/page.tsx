@@ -13,6 +13,7 @@ import SharePost from "@/components/Post/SharePost";
 import PostImage from "@/components/Post/PostImage";
 import TableOfContents from "@/components/Post/TableOfContents";
 import PostTags from "@/components/Post/PostTags";
+import ScrollProgressbar from "@/components/ScrollProgressbar";
 
 export default async function Post({ params }: Params) {
 
@@ -23,9 +24,9 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-
   return (
     <main className="my-5">
+      <ScrollProgressbar />
       <Container>
         <article className="mb-5">
           <PostHeader title={post.title} date={post.date} content={post.content} contributors={post.contributors} />

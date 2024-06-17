@@ -15,8 +15,8 @@
     "framer-motion": "^11.1.7",
     "gray-matter": "^4.0.3",
     "moment": "^2.30.1",
-    "next": "^14.2.2",
-    "next-nprogress-bar": "^2.3.5",
+    "next": "^14.2.4",
+    "next-nprogress-bar": "^2.3.12",
     "react": "^18",
     "react-animated-cursor": "^2.11.2",
     "react-copy-to-clipboard": "^5.1.0",
@@ -36,11 +36,11 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
-    "validator": "^13.11.0"
+    "validator": "^13.12.0"
   },
   "devDependencies": {
     "@heroicons/react": "^2.1.1",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
