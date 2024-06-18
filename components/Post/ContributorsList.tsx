@@ -15,7 +15,7 @@ interface AuthorProps {
 const prefix = (count: number, index: number) => {
   if (index === count - 2) {
     return " & ";
-  } else if (index == count - 1) {
+  } else if (index === count - 1) {
     return "";
   } else {
     return ", ";
@@ -23,40 +23,45 @@ const prefix = (count: number, index: number) => {
 }
 
 const Author: React.FC<AuthorProps> = ({ index, authorName, count }) => {
-  if (count == 1) {
+  if (count === 1) {
     // If there is only 1 author
-    return <span className='hover:underline'>{authorName.trim()}</span>
+    return <span className='hover:underline'>{authorName.trim()}</span>;
   } else {
     // If there are multiple authors
     return (
       <>
         <span className='hover:underline'>{authorName.trim()}</span>{prefix(count, index)}
       </>
-    )
+    );
   }
-}
+};
 
 const ContributorsList: React.FC<Props> = ({ authors }) => {
-  const numberOfAuthors = authors.length;
+  const Authors = () => {
+    const numberOfAuthors = authors.length;
+    return (
+      <>
+        {numberOfAuthors === 1 ? (
+          <span className="font-ubuntu font-semibold">{authors[0]}</span>
+        ) : (
+          authors.map((author, key) => (
+            <span className="font-ubuntu font-semibold" key={key}>
+              <Author authorName={author} index={key} count={numberOfAuthors} />
+            </span>
+          ))
+        )}
+      </>
+    );
+  };
 
   return (
     <div className="text-sky-400">
-      <Heading variant='body-small' className="font-ubuntu font-semibold items-center flex">
-        <span className='flex mr-1 items-center'>
-          <FaPenToSquare className='mr-1' /> Written by {" "}
+      <div className="font-ubuntu font-semibold items-center">
+        <span className="inline-block">
+          <FaPenToSquare className='inline-block align-middle mr-1' size={13} />Written by{" "}
+          <Authors />
         </span>
-        <span>
-          {numberOfAuthors === 1 ? (
-            <span className="font-ubuntu font-semibold">{authors[0]}</span>
-          ) : (
-            authors.map((author, key) => (
-              <span className="font-ubuntu font-semibold" key={key}>
-                <Author authorName={author} index={key} count={numberOfAuthors} />
-              </span>
-            ))
-          )}
-        </span>
-      </Heading>
+      </div>
     </div>
   );
 };

@@ -27,6 +27,7 @@ const Button = (props: ButtonProps) => {
     const buttonClass =
         clsx(
             "font-ubuntu font-medium text-white text-center px-3.5 sm:px-4 py-2 rounded-lg",
+            "text-xs sm:text-base", // Smaller text for mobile (text-sm) and normal size for larger screens (text-base)
             `bg-${isPrimary ? 'main' : 'grey'}`,
             className
         )
@@ -38,4 +39,4 @@ const Button = (props: ButtonProps) => {
     );
 }
 
-export default Button
+export default Button;

@@ -54,18 +54,16 @@ export const PostHeader = (props: Props) => {
 
     return (
         <div className="mb-5">
-            <div data-aos="fade-right" data-aos-duration="250">
-                <BreadCrumb />
-                <Heading variant="h1" className="mb-5">{props.title}</Heading>
-                <time dateTime={props.date} className="flex font-mono text-emerald-500 font-semibold items-center">
-                    <FaClock className="mr-1" size={13} /> Published on {formattedDate}
-                </time>
+            <BreadCrumb />
+            <Heading variant="h1" className="mb-5">{props.title}</Heading>
+            <time dateTime={props.date} className="flex font-ubuntu text-emerald-500 font-semibold items-center">
+                <FaClock className="mr-1" size={13} /> Published on {formattedDate}
+            </time>
 
-                <ContributorsList authors={authors} />
-                <span className="flex font-mono text-indigo-500 font-semibold items-center">
-                    <FaClock className="mr-1" size={13} /> Reading time: {timeEstimation.text}
-                </span>
-            </div>
+            <ContributorsList authors={authors} />
+            <span className="flex font-ubuntu text-indigo-500 font-semibold items-center">
+                <FaClock className="mr-1" size={13} /> Reading time: {timeEstimation.text}
+            </span>
         </div>
     );
 }
