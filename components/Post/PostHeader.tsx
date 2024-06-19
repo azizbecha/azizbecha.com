@@ -3,10 +3,11 @@ import Link from "next/link";
 import moment from "moment";
 import { readingTime } from 'reading-time-estimator'
 
-import { FaClock } from "react-icons/fa6";
+import { FaClock, FaRegCalendar } from "react-icons/fa6";
 
 import ContributorsList from "./ContributorsList";
 import Heading from "../Heading";
+import { FaFileUpload } from "react-icons/fa";
 
 interface Props {
     title: string,
@@ -57,7 +58,7 @@ export const PostHeader = (props: Props) => {
             <BreadCrumb />
             <Heading variant="h1" className="mb-5">{props.title}</Heading>
             <time dateTime={props.date} className="flex font-ubuntu text-emerald-500 font-semibold items-center">
-                <FaClock className="mr-1" size={13} /> Published on {formattedDate}
+                <FaFileUpload className="mr-1" size={13} /> Published on {formattedDate}
             </time>
 
             <ContributorsList authors={authors} />
