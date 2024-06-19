@@ -15,14 +15,18 @@ import TableOfContents from "@/components/Post/TableOfContents";
 import PostTags from "@/components/Post/PostTags";
 import ScrollProgressbar from "@/components/ScrollProgressbar";
 
-export default async function Post({ params, req }: Params & { req: any }) {
+export default async function Post({ params }: Params) {
 
   const post = getPostBySlug(params.slug);
-  const url = `${req ? `${req.protocol}://${req.get('host')}` : 'http://localhost:3000'}/posts/${params.slug}`;
-
+  
   if (!post) {
     return notFound();
   }
+
+  const vercelUrl = process.env.VERCEL_URL;
+  const protocol = process.env.VERCEL_ENV === 'production' ? 'https' : 'http';
+  const baseUrl = vercelUrl ? `${protocol}://${vercelUrl}` : 'http://localhost:3000';
+  const url = `${baseUrl}/posts/${params.slug}`;
 
   return (
     <main className="my-5">
@@ -45,7 +49,6 @@ export default async function Post({ params, req }: Params & { req: any }) {
         </article>
 
         <SharePost url={url} />
-
       </Container>
     </main>
   );
