@@ -6,7 +6,7 @@ interface CommonButtonProps {
     className?: string;
     onClick?: () => void;
     type?: "button" | "submit" | "reset"; // New: Add the type prop
-    disabled: boolean;
+    disabled?: boolean;
 }
 
 interface PrimaryButtonProps extends CommonButtonProps {
