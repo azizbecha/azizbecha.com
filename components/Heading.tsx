@@ -63,6 +63,10 @@ const Heading = ({ variant, children, className, as, id, link }: Props) => {
         link && 'hover:underline'
     );
 
+    const vercelUrl = process.env.VERCEL_URL;
+    const protocol = process.env.VERCEL_ENV === 'production' ? 'https' : 'http';
+    const baseUrl = vercelUrl ? `${protocol}://${vercelUrl}` : 'http://localhost:3000';
+
     return (
         <div className={`${linkId && link && path && "relative group flex items-center py-0.5"}`}>
             <Tag
@@ -77,7 +81,7 @@ const Heading = ({ variant, children, className, as, id, link }: Props) => {
                     className="tooltip tooltip-left absolute -ml-10 opacity-0 group-hover:opacity-100 transition-opacity p-2"
                     data-tip="Copy link"
                     onClick={() => {
-                        navigator.clipboard.writeText(path+linkId);
+                        navigator.clipboard.writeText(baseUrl + path + linkId);
                         toast.success("Link copied to clipboard");
                     }}
                 >
