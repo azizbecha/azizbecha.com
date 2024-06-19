@@ -1,5 +1,5 @@
 ---
-title: "React Architecture: How to Structure and Organize a React Application"
+title: "How to Structure and Organize a React Application"
 date: "2024-02-20"
 image: /react.jpg
 tags: 

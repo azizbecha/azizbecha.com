@@ -29,14 +29,14 @@ const PostPreview: React.FC<Props> = (props) => {
                     />
                 </div>
                 <div className="mb-2">
-                    <Heading variant="h5" className="font-ubuntu font-medium text-white">
+                    <Heading variant="body" className="font-ubuntu font-medium text-white">
                         {post.title}
                     </Heading>
                 </div>
 
                 <div className="flex justify-between items-center gap-2">
                     <Link href={`posts/${post.slug}`}>
-                        <Button secondary>Read More</Button>
+                        <Button>Read More</Button>
                     </Link>
                     <div className="flex items-center gap-1 text-gray-500">
                         <FaClock size={13} /> 

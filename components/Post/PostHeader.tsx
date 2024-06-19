@@ -16,7 +16,7 @@ interface Props {
     contributors: string[]
 }
 
-const BreadCrumb = () => {
+const BreadCrumb:React.FC<{title: string}> = (props) => {
     return (
         <nav className="flex mb-3" aria-label="Breadcrumb">
             <ol className="inline-flex items-center text-gray-400 space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -41,6 +41,7 @@ const BreadCrumb = () => {
                         <svg className="rtl:rotate-180 w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                         </svg>
+                        <Link href={`../posts/${props.title}`} className="ms-1 text-sm font-medium">{props.title}</Link>
                     </div>
                 </li>
             </ol>
@@ -55,7 +56,7 @@ export const PostHeader = (props: Props) => {
 
     return (
         <div className="mb-5">
-            <BreadCrumb />
+            <BreadCrumb title={props.title} />
             <Heading variant="h1" className="mb-5">{props.title}</Heading>
             <time dateTime={props.date} className="flex font-ubuntu text-emerald-500 font-semibold items-center">
                 <FaFileUpload className="mr-1" size={13} /> Published on {formattedDate}

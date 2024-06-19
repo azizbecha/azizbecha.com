@@ -68,7 +68,7 @@ const Projects = () => {
         {
             name: "ShibHouse",
             description: "Shibhouse is a voice-chatting, podcasts, meme-based platform created as a joke that went viral in a short time to re-take voice conversations to the moon 🚀",
-            image: "https://user-images.githubusercontent.com/63454940/196781985-bbddadb9-0fdb-4aae-a780-51bf5bfeffe2.png",
+            image: "../shibhouse.png",
             link: "https://github.com/azizbecha/shibhouse"
         },
         {
@@ -107,8 +107,8 @@ const Projects = () => {
                         elements.map((element, key) => (
                             <div className="bg-gray-800 p-3 rounded-md" key={key}>
                                 <img src={element.image} className="mb-3" />
-                                <Heading variant="h5">{element.name}</Heading>
-                                <Heading variant="small">
+                                <Heading variant="h5" className="mb-1.5">{element.name}</Heading>
+                                <Heading variant="body-small">
                                     {element.description}
                                 </Heading>
 
