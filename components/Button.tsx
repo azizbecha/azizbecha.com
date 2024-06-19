@@ -1,9 +1,12 @@
+import React from "react";
 import clsx from "clsx";
 
 interface CommonButtonProps {
     children: React.ReactNode;
     className?: string;
     onClick?: () => void;
+    type?: "button" | "submit" | "reset"; // New: Add the type prop
+    disabled: boolean;
 }
 
 interface PrimaryButtonProps extends CommonButtonProps {
@@ -21,7 +24,7 @@ type ButtonProps = (PrimaryButtonProps | SecondaryButtonProps) & {
 };
 
 const Button = (props: ButtonProps) => {
-    const { primary, secondary, children, className, onClick } = props;
+    const { primary, secondary, children, className, onClick, type = "button", disabled = false } = props; // New: Destructure the type prop and provide a default value
 
     const isPrimary = primary || (!primary && !secondary);
     const buttonClass =
@@ -33,7 +36,7 @@ const Button = (props: ButtonProps) => {
         )
 
     return (
-        <button className={buttonClass} onClick={onClick}>
+        <button className={buttonClass} onClick={onClick} type={type} disabled={disabled}> {/* New: Pass the type prop to the button element */}
             {children}
         </button>
     );
