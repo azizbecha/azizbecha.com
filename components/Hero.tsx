@@ -45,7 +45,7 @@ const Hero = () => {
     return (
         <Tile className="animated-border border-2 border-transparent mb-5">
             <div className="mb-2">
-                <Heading variant='h1' className="hero-title text-main font-ubuntu font-bold text-5xl mb-3">
+                <Heading variant='h1' className="hero-title text-main mb-3">
                     Hey, I&apos;m Aziz Becha ✨
                 </Heading>
                 <Heading variant='body'>
