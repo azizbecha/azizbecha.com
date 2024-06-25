@@ -166,8 +166,8 @@ const Socials = () => {
     return (
         <section id="socials">
             <Tile>
-                <Heading variant="h2" className="mb-4 font-serif">Socials 🌐</Heading>
-                <Heading variant="small">
+                <Heading variant="h2" className="mb-2 font-serif">Socials 🌐</Heading>
+                <Heading variant="body-small">
                     I&apos;m not very active on socials, but here are mine anyway 👇
                 </Heading>
 

@@ -107,3 +107,9 @@
 .toc a:hover {
     @apply text-white transition-colors
 }
+
+@media (max-width: 768px) {
+    .hide-cursor {
+        display: none !important;
+    }
+}

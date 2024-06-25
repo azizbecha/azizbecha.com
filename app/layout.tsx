@@ -8,9 +8,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSInit from "@/components/AOSInit";
 import ProgressBar from "@/components/ProgressBar";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 import "./globals.css";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   title: "Aziz Becha",
