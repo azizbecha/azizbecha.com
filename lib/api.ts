@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 import { Post } from "@/types";
+import haveCommonElements from "./haveCommonElements";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -46,6 +47,15 @@ export function getPostsByWriter(writer: string): Post[] {
     post.writers?.includes(writer)
   );
   return writerPosts;
+}
+
+export function getPostsByTags(tags: string[]): Post[] {
+  const allPosts = getAllPosts();
+  const taggedPosts = allPosts.filter((post) =>
+    // checks if post's tags and given tags matches have common elements
+    haveCommonElements(post.tags, tags)
+  );
+  return taggedPosts;
 }
 
 export function getPostsByDateRange(startDate: string, endDate: string): Post[] {
