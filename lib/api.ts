@@ -70,3 +70,36 @@ export function getPostsByDateRange(startDate: string, endDate: string): Post[] 
 
   return dateRangePosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
+
+export function getAllWriters(): string[] {
+  const posts = getAllPosts();
+  const writers = new Set<string>();
+
+  posts.forEach((post) => {
+    post.writers?.forEach((writer) => writers.add(writer));
+  });
+
+  return Array.from(writers);
+}
+
+export function getAllTags(): string[] {
+  const posts = getAllPosts();
+  const tags = new Set<string>();
+
+  posts.forEach((post) => {
+    post.tags?.forEach((writer) => tags.add(writer));
+  });
+
+  return Array.from(tags);
+}
+
+export function getAllTitles(): string[] {
+  const posts = getAllPosts();
+  const titles = new Set<string>();
+
+  posts.forEach((post) => {
+    titles.add(post.title);
+  });
+
+  return Array.from(titles);
+}
