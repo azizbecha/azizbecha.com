@@ -47,3 +47,16 @@ export function getPostsByWriter(writer: string): Post[] {
   );
   return writerPosts;
 }
+
+export function getPostsByDateRange(startDate: string, endDate: string): Post[] {
+  const allPosts = getAllPosts();
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const dateRangePosts = allPosts.filter((post) => {
+    const postDate = new Date(post.date);
+    return postDate >= start && postDate <= end;
+  });
+
+  return dateRangePosts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+}
