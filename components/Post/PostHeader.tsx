@@ -3,9 +3,9 @@ import Link from "next/link";
 import moment from "moment";
 import { readingTime } from 'reading-time-estimator'
 
-import { FaClock, FaRegCalendar } from "react-icons/fa6";
+import { FaClock } from "react-icons/fa6";
 
-import ContributorsList from "./ContributorsList";
+import WritersList from "./WritersList";
 import Heading from "../Heading";
 import { FaFileUpload } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ interface Props {
     title: string,
     date: string,
     content: string,
-    contributors: string[]
+    writers: string[]
 }
 
 const BreadCrumb:React.FC<{title: string}> = (props) => {
@@ -51,7 +51,7 @@ const BreadCrumb:React.FC<{title: string}> = (props) => {
 
 export const PostHeader = (props: Props) => {
     const formattedDate = moment(props.date).format('MMMM D, YYYY');
-    const authors = props.contributors;
+    const authors = props.writers;
     const timeEstimation = readingTime(props.content);
 
     return (
@@ -62,7 +62,7 @@ export const PostHeader = (props: Props) => {
                 <FaFileUpload className="mr-1" size={13} /> Published on {formattedDate}
             </time>
 
-            <ContributorsList authors={authors} />
+            <WritersList writers={authors} />
             <span className="flex font-ubuntu text-indigo-500 font-semibold items-center">
                 <FaClock className="mr-1" size={13} /> Reading time: {timeEstimation.text}
             </span>

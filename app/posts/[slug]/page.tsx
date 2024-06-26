@@ -33,7 +33,7 @@ export default async function Post({ params }: Params) {
       <ScrollProgressbar />
       <Container>
         <article className="mb-5">
-          <PostHeader title={post.title} date={post.date} content={post.content} contributors={post.contributors} />
+          <PostHeader title={post.title} date={post.date} content={post.content} writers={post.writers} />
           <div className="flex gap-3">
             <div className="sm:w-3/4 w-full">
               <PostImage image={post.image} />
@@ -79,14 +79,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     robots: "index, follow",
     creator: "Aziz Becha",
     publisher: "Aziz Becha",
-    authors: post.contributors.map((author) => ({ name: author.trim() })),
+    authors: post.writers.map((writer) => ({ name: writer.trim() })),
     openGraph: {
       type: "article",
       title,
       description,
       siteName: "Aziz Becha",
       publishedTime: post.date,
-      authors: post.contributors.map((contributor) => (contributor.trim())),
+      authors: post.writers.map((writer) => (writer.trim())),
       tags: post.tags.map((tag) => (tag.trim())),
       images: post.image,
     },

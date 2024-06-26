@@ -6,7 +6,7 @@ tags:
   - code
   - react
   - js
-contributors: 
+writers: 
  - Aziz Becha
  - Elon Musk
  - Jeff Bezos

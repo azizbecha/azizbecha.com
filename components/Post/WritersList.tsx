@@ -1,15 +1,14 @@
 import React from 'react';
-import Heading from '../Heading';
 import { FaPenToSquare } from 'react-icons/fa6';
 
 interface Props {
-  authors: string[];
+  writers: string[];
 }
 
-interface AuthorProps {
+interface WriterProps {
   index: number,
   count: number,
-  authorName: string
+  name: string
 }
 
 const prefix = (count: number, index: number) => {
@@ -22,7 +21,7 @@ const prefix = (count: number, index: number) => {
   }
 }
 
-const Author: React.FC<AuthorProps> = ({ index, authorName, count }) => {
+const Author: React.FC<WriterProps> = ({ index, name: authorName, count }) => {
   if (count === 1) {
     // If there is only 1 author
     return <span className='hover:underline'>{authorName.trim()}</span>;
@@ -36,17 +35,17 @@ const Author: React.FC<AuthorProps> = ({ index, authorName, count }) => {
   }
 };
 
-const ContributorsList: React.FC<Props> = ({ authors }) => {
-  const Authors = () => {
-    const numberOfAuthors = authors.length;
+const WritersList: React.FC<Props> = ({ writers: writers }) => {
+  const Writers = () => {
+    const numberOfAuthors = writers.length;
     return (
       <>
         {numberOfAuthors === 1 ? (
-          <span className="font-ubuntu font-semibold">{authors[0]}</span>
+          <span className="font-ubuntu font-semibold">{writers[0]}</span>
         ) : (
-          authors.map((author, key) => (
+          writers.map((author, key) => (
             <span className="font-ubuntu font-semibold" key={key}>
-              <Author authorName={author} index={key} count={numberOfAuthors} />
+              <Author name={author} index={key} count={numberOfAuthors} />
             </span>
           ))
         )}
@@ -59,11 +58,11 @@ const ContributorsList: React.FC<Props> = ({ authors }) => {
       <div className="font-ubuntu font-semibold items-center">
         <span className="inline-block">
           <FaPenToSquare className='inline-block align-middle mr-1' size={13} />Written by{" "}
-          <Authors />
+          <Writers />
         </span>
       </div>
     </div>
   );
 };
 
-export default ContributorsList;
+export default WritersList;
