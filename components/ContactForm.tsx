@@ -70,16 +70,16 @@ const ContactForm: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="mb-2">
                     <label className="font-ubuntu">Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} className="block mt-1.5 disabled={loading} px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your name" disabled={loading} required />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} className="block mt-1.5 px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your name" disabled={loading} required />
                 </div>
                 <div className="mb-2">
                     <label className="font-ubuntu">Email</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} className="block mt-1.5 disabled={loading} px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your email" disabled={loading} required />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} className="block mt-1.5 px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your email" disabled={loading} required />
                 </div>
             </div>
             <div className="mb-4">
                 <label className="font-ubuntu">Message</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} rows={5} className="block mt-1.5 disabled={loading} px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your message" disabled={loading} required></textarea>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={5} className="block mt-1.5 px-3 py-2.5 w-full z-20 text-sm bg-grey rounded-lg focus:outline-none" placeholder="Enter your message" disabled={loading} required></textarea>
             </div>
             <Button type="submit" disabled={loading}>
                 Submit

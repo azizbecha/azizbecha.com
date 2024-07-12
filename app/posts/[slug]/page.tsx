@@ -23,10 +23,7 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-  const vercelUrl = process.env.VERCEL_URL;
-  const protocol = process.env.VERCEL_ENV === 'production' ? 'https' : 'http';
-  const baseUrl = vercelUrl ? `${protocol}://${vercelUrl}` : 'http://localhost:3000';
-  const url = `${baseUrl}/posts/${params.slug}`;
+  const url = `https://azizbecha.com/posts/${params.slug}`;
 
   return (
     <main className="my-5">

@@ -70,7 +70,7 @@
 
 .md-article p {
     @apply text-lg text-justify leading-7 text-grey-300;
-    @apply mb-5
+    @apply mb-5;
 }
 
 .md-article ul,

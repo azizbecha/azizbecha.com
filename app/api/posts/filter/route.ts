@@ -4,13 +4,18 @@ import haveCommonElements from '@/lib/haveCommonElements';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  
+
+  const title = searchParams.get('title');
   const writer = searchParams.get('writer');
   const tagsParam = searchParams.get('tags');
   const startDate = searchParams.get('startDate');
   const endDate = searchParams.get('endDate');
 
   let posts = getAllPosts();
+
+  if (title) {
+    posts = posts.filter(post => post.title.toLowerCase().includes(title.toLowerCase()));
+  }
 
   if (writer) {
     posts = posts.filter(post => post.writers?.includes(writer));

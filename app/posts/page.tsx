@@ -13,7 +13,7 @@ export default function AllPosts() {
                 📚 From Code to Life: Our Blog Hub for Coding, Design, Life Tips, Books, and Business 🚀
             </Heading>
             <Divider />
-            <Posts />
+            <Posts allowFilter />
         </Container>
     )
 }
