@@ -1,12 +1,11 @@
 "use client"
 
 import { FC, useEffect, useState, useCallback } from "react";
-import PostPreview from "./PostPreview";
-import MultipleSkeletonLoaders from "./MultipleSkeletonLoaders";
 import { Post } from "@/types";
 import DatePicker from "react-datepicker";
-import Select from 'react-select'
-import { ReactTags } from 'react-tag-autocomplete'
+
+import MultipleSkeletonLoaders from "./MultipleSkeletonLoaders";
+import PostPreview from "./PostPreview";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -65,29 +64,6 @@ const Posts: FC<Props> = ({ limit, allowFilter = false }) => {
 
     // Sort posts based on limit
     const sortedPosts = limit ? posts.slice(0, limit).sort((a, b) => b.date.localeCompare(a.date)) : posts;
-
-
-    const suggestions = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ];
-
-    // const [selected, setSelected] = useState([])
-
-    // const onAdd = useCallback(
-    //     (newTag: any) => {
-    //         setSelected([...selected, newTag])
-    //     },
-    //     [selected]
-    // )
-
-    // const onDelete = useCallback(
-    //     (tagIndex: number) => {
-    //         setSelected(selected.filter((_, i) => i !== tagIndex))
-    //     },
-    //     [selected]
-    // )
 
     return (
         <div>
