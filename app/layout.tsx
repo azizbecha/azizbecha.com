@@ -11,6 +11,8 @@ import ProgressBar from "@/components/ProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 import "./globals.css";
+import Head from "next/head";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Aziz Becha",
@@ -31,6 +33,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth bg-grey">
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FWDGX8HTQ1" />
+      <Head>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.NEXT_GA_ID}');
+          `}
+        </script>
+        <script type="text/javascript">
+          {`(function(c,l,a,r,i,t,y){
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "${process.env.NEXT_CLARITY_ID}");`}
+        </script>
+      </Head>
       <body>
         <Navbar />
         <Toaster />
