@@ -79,7 +79,7 @@ const Projects = () => {
         },
         {
             name: "VSJoke",
-            image: "../vsjoke.png",
+            image: "../vs-joke.png",
             description: "VSJoke is a VSCode extension made for humour purposes that brings programming-related jokes in your workspace with custom languages and filters.",
             link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
         },
