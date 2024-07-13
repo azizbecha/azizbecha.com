@@ -78,15 +78,15 @@ const Projects = () => {
             link: "https://www.youtube.com/watch?v=qFxaPVS9yBY"
         },
         {
-            name: "VSJoke",
-            image: "../vs-joke.png",
-            description: "VSJoke is a VSCode extension made for humour purposes that brings programming-related jokes in your workspace with custom languages and filters.",
-            link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
-        },
-        {
             name: "VSAdhkar",
             image: "../vsadhkar.png",
             description: "VSAdhkar is a VSCode extension that brings daily adhkar and dua directly into your workspace to stay spiritually connected while you work.",
+            link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
+        },
+        {
+            name: "VSJoke",
+            image: "../vs-joke.png",
+            description: "VSJoke is a VSCode extension made for humour purposes that brings programming-related jokes in your workspace with custom languages and filters.",
             link: "https://marketplace.visualstudio.com/items?itemName=azizbecha.vsjoke"
         },
         {
