@@ -66,6 +66,18 @@ const Projects = () => {
 
     const elements = [
         {
+            name: "VoidCast",
+            description: "Voidcast is a fun platform that shares short audio clips from podcasts, kind of like audio TikTok. It helps you easily find and share the best moments from your favorite podcasts!",
+            image: "../voidcast.png",
+            link: "https://voidcast.lol"
+        },
+        {
+            name: "Fahemni",
+            description: "Fahemni, founded by Raouf Chatti and developed by Aziz Bacha, supports higher education students in Tunisia with services to boost their academic and career success.",
+            image: "../fahemni.png",
+            link: "https://fahemni.tn"
+        },
+        {
             name: "ShibHouse",
             description: "Shibhouse is a voice-chatting, podcasts, meme-based platform created as a joke that went viral in a short time to re-take voice conversations to the moon 🚀",
             image: "../shibhouse.png",
