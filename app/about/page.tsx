@@ -8,7 +8,7 @@ import Heading from "@/components/Heading"
 import Tile from "@/components/Tile"
 import Button from "@/components/Button"
 
-import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6"
+import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
 function calculateAge(): number {
     const birthDate: Date = new Date("2005-05-12");
@@ -133,28 +133,28 @@ const Socials = () => {
     const elements = [
         {
             name: "GitHub",
-            link: "https://github.com/azizbecha",
+            link: process.env.NEXT_GITHUB_PROFILE_URL,
             icon: FaGithub
         },
         {
-            name: "Twitter ~ X",
-            link: "https://x.com/azizbechaa",
-            icon: FaXTwitter
+            name: "YouTube",
+            link: process.env.NEXT_YOUTUBE_PROFILE_URL,
+            icon: FaYoutube
         },
         {
             name: "LinkedIn",
-            link: "https://linkedin.com/in/azizbecha",
+            link: process.env.NEXT_LINKEDIN_PROFILE_URL,
             icon: FaLinkedin
         },
         {
             name: "Facebook",
-            link: "https://facebook.com/azizbechaa",
+            link: process.env.NEXT_FACEBOOK_PROFILE_URL,
             icon: FaFacebook
         },
         {
-            name: "Instagram",
-            link: "https://instagram.com/azizbechaa",
-            icon: FaInstagram
+            name: "Twitter ~ X",
+            link: process.env.NEXT_TWITTER_PROFILE_URL,
+            icon: FaXTwitter
         },
         {
             name: "Email",
