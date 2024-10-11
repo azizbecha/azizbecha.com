@@ -3,6 +3,8 @@ import { FaGithub, FaFacebook, FaLinkedin, FaCoffee } from 'react-icons/fa';
 
 import Heading from "./Heading";
 import Divider from "./Divider";
+import Link from "next/link";
+import { FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
     return (
@@ -17,8 +19,9 @@ const Footer = () => {
                 </div>
                 <div className="flex justify-end items-center sm:w-1/4 mt-4 sm:mt-0">
                     <a href={process.env.NEXT_GITHUB_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white mx-2"><FaGithub size={24} /></a>
-                    <a href={process.env.NEXT_FACEBOOK_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white mx-2"><FaFacebook size={24} /></a>
+                    <a href={process.env.NEXT_YOUTUBE_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white mx-2"><FaYoutube size={24} /></a>
                     <a href={process.env.NEXT_LINKEDIN_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white mx-2"><FaLinkedin size={24} /></a>
+                    <a href={process.env.NEXT_FACEBOOK_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="text-white mx-2"><FaFacebook size={24} /></a>
                 </div>
             </div>
 
@@ -26,11 +29,11 @@ const Footer = () => {
             <Divider />
             <div className="flex justify-center mt-4">
                 <ul className="flex gap-4 text-sm">
-                    <li><a href="/home" className="text-white">Home</a></li>
-                    <li><a href="/about" className="text-white">About</a></li>
-                    <li><a href="/projects" className="text-white">Projects</a></li>
-                    <li><a href="/blog" className="text-white">Blog</a></li>
-                    <li><a href="/contact" className="text-white">Contact</a></li>
+                    <li><Link href="/" className="text-white">Home</Link></li>
+                    <li><Link href="/about" className="text-white">About</Link></li>
+                    {/* <li><Link href="/projects" className="text-white">Projects</Link></li> */}
+                    <li><Link href="/posts" className="text-white">Blog</Link></li>
+                    <li><Link href="/contact" className="text-white">Contact</Link></li>
                 </ul>
             </div>
 
