@@ -113,3 +113,14 @@
         display: none !important;
     }
 }
+
+ul {
+    padding-left: 1rem; /* Ensures proper padding for bullet lists */
+    list-style-position: inside; /* Align bullet points within the text box */
+}
+
+li {
+    display: flex;
+    align-items: center;
+    line-height: 1.5; /* Ensure proper spacing */
+}
