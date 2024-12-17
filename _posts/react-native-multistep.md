@@ -1,7 +1,7 @@
 ---
 title: "How to Create Multi-Step Forms in React Native with React Native MultiStep"
 date: "2024-12-17"
-image: /react-native-multistep.png
+image: /react-native-multistep.PNG
 tags: 
   - react-native
   - react
