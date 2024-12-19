@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import Head from "next/head";
+import Script from "next/script";
+
 import { Toaster } from "react-hot-toast";
 
 import Navbar from "@/components/Navbar";
@@ -9,8 +12,6 @@ import ProgressBar from "@/components/ProgressBar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 import "./globals.css";
-import Head from "next/head";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Aziz Becha",
